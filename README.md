@@ -61,7 +61,7 @@ RDF, RDFS & OWL.
 
 ## Other W3C ontologies
 
-SHACL, SKOS, DCAT, CSVW.
+SHACL, SKOS, DCAT, CSVW, VCARD.
 
 ## Other ontologies
 
