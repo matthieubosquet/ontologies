@@ -1,0 +1,18 @@
+# POSIX stat v0
+#
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<#dev> rdfs:comment "ID of device containing file" .
+<#ino> rdfs:comment "inode number" .
+<#mode> rdfs:comment "protection" .
+<#nlink> rdfs:comment "number of hard links" .
+<#uid> rdfs:comment "user ID of owner" .
+<#gid> rdfs:comment "group ID of owner" .
+<#rdev> rdfs:comment "device ID (if special file)" .
+<#size> rdfs:comment "total size, in bytes" .
+<#blksize> rdfs:comment "blocksize for file system I/O" .
+<#blocks> rdfs:comment "number of 512B blocks allocated" .
+<#atime> rdfs:comment "time of last access" .
+<#mtime> rdfs:comment "time of last modification" .
+<#ctime> rdfs:comment "time of last status change" .
