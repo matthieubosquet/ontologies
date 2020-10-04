@@ -1,23 +1,22 @@
 # See details within this document for linkage to specification and purpose.
 # This ontology file is a non-normative supporting document.
 
-# Comments/Questions
-# What's with the owl:Individual (it's not in the non-normative owl ttl, owl individual axiom is described as class instance here https://www.ida.liu.se/research/semanticweb/events/SemWebCourse2018/OWL_basics.pdf)
-# What's the current status of the terms with status testing?
-# Should the Term statuses actually be URIs? (they're not described as such in sw-vocab but hey, need to understand the rationale)
+# Linked Data Platform Ontology
 
 ## Ontology preferred namespace prefix and URI
-@prefix ldp: <http://www.w3.org/ns/ldp#> .
+prefix ldp: <http://www.w3.org/ns/ldp#>
 
 ## Other namespaces used
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+### Core W3C Ontologies
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+### Other Ontologies
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ## Ontology
 <http://www.w3.org/ns/ldp#>
@@ -280,3 +279,8 @@ ldp:inbox
     rdfs:label "inbox";
     dcterms:issued "2016-09-29"^^xsd:date;
     dcterms:creator <http://csarven.ca/#i>, <https://rhiaro.co.uk/#me>.
+
+# Comments/Questions
+## What's with the owl:Individual (it's not in the non-normative owl ttl, owl individual axiom is described as class instance here https://www.ida.liu.se/research/semanticweb/events/SemWebCourse2018/OWL_basics.pdf)
+## What's the current status of the terms with status testing?
+## Should the Term statuses actually be URIs? (they're not described as such in sw-vocab but hey, need to understand the rationale)
