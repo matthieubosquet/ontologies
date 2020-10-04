@@ -1,18 +1,108 @@
-# POSIX stat v0
-#
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
 
-<#dev> rdfs:comment "ID of device containing file" .
-<#ino> rdfs:comment "inode number" .
-<#mode> rdfs:comment "protection" .
-<#nlink> rdfs:comment "number of hard links" .
-<#uid> rdfs:comment "user ID of owner" .
-<#gid> rdfs:comment "group ID of owner" .
-<#rdev> rdfs:comment "device ID (if special file)" .
-<#size> rdfs:comment "total size, in bytes" .
-<#blksize> rdfs:comment "blocksize for file system I/O" .
-<#blocks> rdfs:comment "number of 512B blocks allocated" .
-<#atime> rdfs:comment "time of last access" .
-<#mtime> rdfs:comment "time of last modification" .
-<#ctime> rdfs:comment "time of last status change" .
+# POSIX stat() Ontology
+
+## Ontology preferred namespace prefix and URI
+prefix posixstat: <http://www.w3.org/ns/posix/stat#>
+
+## Other namespaces used
+### Core W3C Ontologies
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+### Other Ontologies
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Ontology
+<http://www.w3.org/ns/posix/stat>
+    a owl:Ontology ;
+    rdfs:label "W3C POSIX stat() ontology"@en ;
+    rdfs:comment "The POSIX stat() function is used to retrieve information on file-system objects (inodes) such as files and directories. Stat is short for display inode status."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Stat_(system_call)> ;
+    vann:preferredNamespacePrefix "posixstat" ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/posix/stat#" .
+
+## Property
+posixstat:atime
+    a rdf:Property ;
+    rdfs:label "Access time"@en ;
+    rdfs:comment "Time at which the inode was last accessed."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:blksize
+    a rdf:Property ;
+    rdfs:label "Blocksize"@en ;
+    rdfs:comment "Blocksize for file system I/O."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:blocks
+    a rdf:Property ;
+    rdfs:label "Blocks"@en ;
+    rdfs:comment "Number of 512B blocks allocated for the inode."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:ctime
+    a rdf:Property ;
+    rdfs:label "Status change time"@en ;
+    rdfs:comment "Time at which the inode status last changed."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:dev
+    a rdf:Property ;
+    rdfs:label "Device ID"@en ;
+    rdfs:comment "ID of the device containing the inode."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:gid
+    a rdf:Property ;
+    rdfs:label "Owner group ID"@en ;
+    rdfs:comment "Group ID of the inode's owner."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:ino
+    a rdf:Property ;
+    rdfs:label "inode number"@en ;
+    rdfs:comment "inode number (each file-system object/inode is identified by an integer)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:mode
+    a rdf:Property ;
+    rdfs:label "Mode"@en ;
+    rdfs:comment "The mode determines an inode's type and access permissions for the owner, its group, and others (read/write/execute)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:mtime
+    a rdf:Property ;
+    rdfs:label "Modification time"@en ;
+    rdfs:comment "Time of the last modification of the inode."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:nlink
+    a rdf:Property ;
+    rdfs:label "Hard links number"@en ;
+    rdfs:comment "Number of hard links pointing to the inode."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:rdev
+    a rdf:Property ;
+    rdfs:label "Device ID"@en ;
+    rdfs:comment "Device ID (if special file). Identifies the device containing the file."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:size
+    a rdf:Property ;
+    rdfs:label "Size"@en ;
+    rdfs:comment "Total size of the inode in bytes."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+posixstat:uid
+    a rdf:Property ;
+    rdfs:label "Owner ID"@en ;
+    rdfs:comment "User ID of the owner of the inode."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> .
+
+
+# Comments/Questions
+## Not sure what "if special file" in "Device ID (if special file)" means... Find out.
