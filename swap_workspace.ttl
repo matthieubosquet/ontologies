@@ -1,0 +1,130 @@
+# Ontology preferred namespace prefix and URI
+@prefix ws: <http://www.w3.org/ns/pim/space#> .
+# Related Ontology
+@prefix doc: <http://www.w3.org/2000/10/swap/pim/doc#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gen: <http://www.w3.org/2006/gen/ont#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ui: <http://www.w3.org/ns/ui#> .
+
+<http://www.w3.org/ns/pim/space>
+    dc:title "Workspace Ontology" ;
+    rdfs:comment """This ontology is for use in describing
+Workspaces.  Workspaces are place where data is stored and asscoiated prolices of privacy.
+A given application typically stores information in several different
+workspaces, some being user private, some shared, and some public.
+it is crucial that the user has easy control over the destiny of information.
+
+Goals then are that the user can:
+      - create workspaces
+      - easily understand which workspace data is going into
+      - understand what the implications of that are
+      - (later) set ACLS on them
+      - publish apropriate use policies for them""" ;
+    doc:version "$Id: space.ttl,v 1.2 2015/06/24 18:42:14 asambra Exp $" .
+
+ws:ConfigurationFile
+    rdfs:subClassOf gen:InformationResource .
+
+ws:ControlledStorage
+    a :Class;
+    rdfs:comment """A storage is a space of URIs in which you can individually control for each resource
+who has access to it.""" ;
+    rdfs:label "access controlled storage" ;
+    rdfs:subClassOf ws:Storage .
+
+ws:masterWorkspace
+    rdfs:comment """This is a workspace for storing the
+information about the other workspaces.
+As a user, you normally don't have to worry about it.""" ;
+    rdfs:label "Master Workspace"@en ;
+    rdfs:subClassOf ws:PrivateWorkspace .
+
+ws:PersonalStorage
+    a :Class;
+    rdfs:comment """A personal storage is a space of URIs in which you and only you have access to data,
+you cannot give access to anyone else.""" ;
+    rdfs:label "personal storage" ;
+    rdfs:subClassOf ws:Storage .
+
+ws:PrivateWorkspace
+    rdfs:comment "Access only by the you, the user." ;
+    rdfs:label "Private workspace";
+    rdfs:subClassOf ws:Workspace .
+
+ws:PublicStorage
+    a :Class;
+    rdfs:comment """A public storage is a space of URIs in which you have access to data,
+and all data is accessible to anyone without control.""";
+    rdfs:label "public storage";
+    rdfs:subClassOf ws:Storage .
+
+ws:PublicWorkspace
+    rdfs:comment """Aceess is open to the public. Anything in a public workspace
+can be accesed by anyone.""";
+    rdfs:label "Public workspace";
+    rdfs:subClassOf ws:Workspace .
+
+ws:PreferencesWorkspace
+    rdfs:comment """AAceess may not be open to the public.
+Contains preferences resources""" ;
+    rdfs:label "Preferences workspace" ;
+    rdfs:subClassOf ws:Workspace .
+
+ws:SharedWorkspace
+    rdfs:comment "Access is to some but not all people." ;
+    rdfs:label "Shared workspace" ;
+    rdfs:subClassOf ws:Workspace .
+
+ws:Storage
+    a rdfs:Class;
+    rdfs:comment "A storage is a space of URIs in which you have access to data.";
+    rdfs:label "storage" .
+
+ws:Workspace
+    a rdfs:Class;
+    rdfs:comment """Workspaces are place where data is stored, and associated polices of privacy.
+A given application typically stores information in several different
+workspaces, some being user private, some shared, and some public.
+""";
+    rdfs:label "workspace";
+    owl:disjointUnionOf  (
+        ws:PrivateWorkspace
+        ws:SharedWorkspace
+        ws:PublicWorkspace ) .
+
+ws:masterWorkspace
+    a rdf:Property ;
+    rdfs:domain foaf:Agent ;
+    rdfs:label "master workspace"@en ;
+    rdfs:range ws:MasterWorkspace .
+
+ws:preferencesFile
+    a rdf:Property ;
+    rdfs:domain foaf:Agent ;
+    rdfs:label "preferences file" ;
+    rdfs:range ws:ConfigurationFile .
+
+ws:storage
+    a rdf:Property;
+    rdfs:comment "The storage in which this workspace is";
+    rdfs:label "storage" ;
+    rdfs:range ws:Storage ;
+    owl:inverse [ :label "workspace included" ] .
+
+ws:uriPrefix
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment """URIs which start with this string are in this workspace or storage.
+This may be used for constructing URIs for new storage resources.
+""";
+    rdfs:label "URI prefix" ;
+    ui:prompt "Give the first part of the URis in this workspace" .
+
+ws:workspace
+    a rdf:Property ;
+    rdfs:label "workspace"@en ;
+    rdfs:range ws:Workspace .
