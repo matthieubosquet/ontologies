@@ -1,17 +1,18 @@
 # See details within this document for linkage to specification and purpose.
 # This ontology file is a non-normative supporting document.
 
-# POSIX stat() Ontology
+# POSIX stat() ontology
 
 ## Ontology preferred namespace prefix and URI
 prefix posixstat: <http://www.w3.org/ns/posix/stat#>
 
 ## Other namespaces used
-### Core W3C Ontologies
+### Core W3C ontologies
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
-### Other Ontologies
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
 prefix vann: <http://purl.org/vocab/vann/>
 
 ## Ontology
@@ -22,7 +23,7 @@ prefix vann: <http://purl.org/vocab/vann/>
     rdfs:isDefinedBy <http://www.w3.org/ns/posix/stat> ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Stat_(system_call)> ;
     vann:preferredNamespacePrefix "posixstat" ;
-    vann:preferredNamespaceUri "http://www.w3.org/ns/posix/stat#" .
+    vann:preferredNamespaceUri "http://www.w3.org/ns/posix/stat#"^^xsd:anyURI .
 
 ## Property
 posixstat:atime
@@ -105,4 +106,4 @@ posixstat:uid
 
 
 # Comments/Questions
-## Not sure what "if special file" in "Device ID (if special file)" means... Find out.
+## Not sure what "if special file" in "Device ID (if special file)" means... TODO Find out.
