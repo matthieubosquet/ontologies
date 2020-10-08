@@ -1,32 +1,61 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcam: <http://purl.org/dc/dcam/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
 
+# Dublin Core metadata element set ontology
+
+## Ontology preferred namespace prefix and URI
+prefix dc: <http://purl.org/dc/elements/1.1/>
+
+## Other namespaces used
+### Core W3C ontologies
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix schema: <https://schema.org/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Ontology
 <http://purl.org/dc/elements/1.1/>
-    dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
-    dcterms:title "Dublin Core Metadata Element Set, Version 1.1"@en .
+    a owl:Ontology ;
+    rdfs:label "Dublin Core metadata element set ontology"@en ;
+    rdfs:comment "The http://purl.org/dc/elements/1.1/ namespace was created in 2000 for the RDF representation of the fifteen-element Dublin Core and has been widely used in data for more than twenty years. This namespace corresponds to the original scope of ISO 15836 (first published in 2003)."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+    rdfs:seeAlso
+        <https://dublincore.org/specifications/dublin-core/dces/>,
+        <https://dublincore.org/about/>,
+        <https://dublincore.org/specifications/dublin-core/dcmi-terms/>,
+        <https://www.iso.org/standard/71339.html> ;
+    schema:supersededBy <http://purl.org/dc/terms/> ;
+    dcterms:issued "2012-06-14"^^xsd:date ;
+    vann:preferredNamespacePrefix "dc" ;
+    vann:preferredNamespaceUri "http://purl.org/dc/elements/1.1/" .
 
-<http://purl.org/dc/elements/1.1/contributor>
-    dcterms:description "The guidelines for using names of persons or organizations as creators also apply to contributors.  Typically, the name of a Contributor should be used to indicate the entity."@en ;
-    dcterms:issued "1999-07-02"^^<http://www.w3.org/2001/XMLSchema#date> ;
+## Property
+dc:contributor
     a rdf:Property ;
+    rdfs:label "Contributor"@en ;
     rdfs:comment "An entity responsible for making contributions to the resource."@en ;
     rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:label "Contributor"@en ;
-    skos:note "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+    rdfs:seeAlso <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/contributor> ;
+    schema:supersededBy dcterms:contributor ;
+    dcterms:issued "1999-07-02"^^xsd:date ;
+    dcterms:description "The guidelines for using names of persons or organizations as creators also apply to contributors. Typically, the name of a Contributor should be used to indicate the entity."@en ;
+    skos:note "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/). See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
 
-<http://purl.org/dc/elements/1.1/coverage>
-    dcterms:description "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges."@en ;
-    dcterms:issued "1999-07-02"^^<http://www.w3.org/2001/XMLSchema#date> ;
+dc:coverage
     a rdf:Property ;
+    rdfs:label "Coverage"@en ;
     rdfs:comment "The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant."@en ;
     rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:label "Coverage"@en ;
-    skos:note "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/coverage) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+    rdfs:seeAlso <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/coverage> ;
+    schema:supersededBy dcterms:coverage ;
+    dcterms:issued "1999-07-02"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:description "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges."@en ;
+    skos:note "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/coverage) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/). See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
 
 <http://purl.org/dc/elements/1.1/creator>
     dcterms:description "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."@en ;
@@ -143,4 +172,3 @@
     rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
     rdfs:label "Type"@en ;
     skos:note "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/type) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
-

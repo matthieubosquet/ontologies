@@ -1,11 +1,41 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
 
-<http://www.w3.org/1999/02/22-rdf-syntax-ns#> a owl:Ontology ;
-    dc:title "The RDF Concepts Vocabulary (RDF)" ;
-    dc:description "This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts." .
+# W3C RDF ontology
+
+## Ontology preferred namespace prefix and URI
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+## Other namespaces used
+### Core W3C ontologies
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Ontology
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    a owl:Ontology ;
+    rdfs:label "W3C RDF ontology"@en ;
+    rdfs:comment "This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+    rdfs:seeAlso
+        <https://www.w3.org/TR/rdf11-primer/>,
+        <https://www.w3.org/TR/rdf11-concepts/>,
+        <https://www.w3.org/TR/rdf11-mt/>,
+        <https://www.w3.org/TR/turtle/>,
+        <https://www.w3.org/TR/trig/>,
+        <https://www.w3.org/TR/n-triples/>,
+        <https://www.w3.org/TR/n-quads/>,
+        <https://www.w3.org/TR/rdf-syntax-grammar/>,
+        <https://www.w3.org/TR/rdf11-new/>,
+        <https://www.w3.org/TR/rdf11-datasets/>,
+        <https://www.w3.org/TR/rdf11-testcases/>,
+        <https://www.w3.org/TR/rdf-json/> ;
+    vann:preferredNamespacePrefix "rdf" ;
+    vann:preferredNamespaceUri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI .
+
 
 rdf:HTML a rdfs:Datatype ;
     rdfs:subClassOf rdfs:Literal ;
