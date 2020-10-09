@@ -67,3 +67,42 @@ SHACL, SKOS, DCAT, CSVW, VCARD.
 
 Dublin Core, FOAF, Schema.
 
+## Standard prefixes
+
+There is a list of standard prefixes in [prefix.ttl](prefix.ttl) for easy copy/paste.
+
+The list is maintained in lowercase SPARQL syntax to be usable in both Turtle and SPARQL. This syntax requires an RDF 1.1 Turtle parser which can be considered as of 2020 as widely deployed. Therefore no reason to keep using the syntax including an '@' as per the [Turtle Spec note on IRIs](https://www.w3.org/TR/turtle/#sec-iri).
+
+```turtle
+# Core W3C ontologies (OWL 2 reserved vocabulary)
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+# Other ontologies
+prefix acl: <http://www.w3.org/ns/auth/acl#>
+prefix cc: <http://creativecommons.org/ns#>
+prefix cert: <http://www.w3.org/ns/auth/cert#>
+prefix csvw: <http://www.w3.org/ns/csvw#>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dcam: <http://purl.org/dc/dcam/>
+prefix dcat: <http://www.w3.org/ns/dcat#>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix dctype: <http://purl.org/dc/dcmitype/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix ldp: <http://www.w3.org/ns/ldp#>
+prefix posixstat: <http://www.w3.org/ns/posix/stat#>
+prefix schema: <https://schema.org/>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix skosxl: <http://www.w3.org/2008/05/skos-xl#>
+prefix solidterms: <http://www.w3.org/ns/solid/terms#>
+prefix swapdoc: <http://www.w3.org/2000/10/swap/pim/doc#>
+prefix ui: <http://www.w3.org/ns/ui#>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix vcard: <http://www.w3.org/2006/vcard/ns#>
+prefix ws: <http://www.w3.org/ns/pim/space#>
+```
+
+The namespace lookup tool [prefix.cc](https://prefix.cc) can help understand current prefix usage. The [Linked Open Vocabularies website](https://lov.linkeddata.es/dataset/lov/) can help understand vocabularies usage.
