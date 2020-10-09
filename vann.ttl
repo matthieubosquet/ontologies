@@ -1,0 +1,72 @@
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
+
+# Vocabulary Annotation ontology
+
+## Ontology preferred namespace prefix and URI
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Other namespaces used
+### Core W3C ontologies
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
+prefix dcterms: <http://purl.org/dc/terms/>
+
+## Ontology
+<http://purl.org/vocab/vann/>
+    a owl:Ontology ;
+    rdfs:label "Vocabulary annotation ontology"@en ;
+    rdfs:comment "The vocabulary annotation ontology is used to describe an ontology and the terms it defines."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> ;
+    rdfs:seeAlso <https://vocab.org/vann/> ;
+    vann:preferredNamespacePrefix "vann" ;
+    vann:preferredNamespaceUri "http://purl.org/vocab/vann/"^^xsd:anyURI ;
+    dcterms:creator [
+        rdfs:seeAlso <http://iandavis.com/id/me> ;
+        foaf:name "Ian Davis" ;
+        ] ;
+    dcterms:issued "2005-04-01"^^xsd:date ;
+    owl:priorVersion <http://purl.org/vocab/vann/vann-vocab-20040305> .
+
+## Property
+vann:changes
+    a rdf:Property ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+    rdfs:label "changes" ;
+    rdfs:comment "A reference to a resource that describes changes between this version of a vocabulary and the previous." ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:example
+    a rdf:Property ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+    rdfs:label "Example"@en ;
+    rdfs:comment "A reference to a resource that provides an example of how this resource can be used."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:preferredNamespacePrefix
+    a rdf:Property ;
+    rdfs:label "Preferred namespace prefix"@en ;
+    rdfs:comment "The preferred namespace prefix to use when serialising terms from this vocabulary to a compact URI (CURIE)."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:preferredNamespaceUri
+    a rdf:Property ;
+    rdfs:label "Preferred namespace URI"@en ;
+    rdfs:comment "The preferred namespace URI to use when substituting the prefix in a compact URI."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:termGroup
+    a rdf:Property ;
+    rdfs:label "Term group"@en ;
+    rdfs:comment "A group of related terms in a vocabulary."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
+
+vann:usageNote
+    a rdf:Property ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+    rdfs:label "Usage note"@en ;
+    rdfs:comment "A reference to a resource that provides information on how this resource is meant to be used."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/vann/> .
