@@ -9,7 +9,7 @@ A collection of standard and well known ontologies serialised to [Turtle](https:
 
 ## Core W3C ontologies
 
-RDF, RDFS & OWL.
+RDF, RDFS, OWL & XSD constitute the reserved vocabulary of the OWL 2 Web Ontology Language. Those 4 ontologies constitute therefore the backbone of the Semantic Web.
 
 <blockquote cite="https://www.w3.org/TR/rdf-concepts/">
     <h3>Anyone Can Make Statements About Any Resource</h3>
@@ -58,6 +58,11 @@ RDF, RDFS & OWL.
   - [Manchester Syntax](https://www.w3.org/TR/owl2-manchester-syntax/) (Working Group Note)
 - Extension
   - [Data Range Extension: Linear Equations](https://www.w3.org/TR/owl2-dr-linear/) (Working Group Note)
+
+### XSD Datatypes
+
+- [XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](https://www.w3.org/TR/xmlschema11-2/)
+- [OWL Quick Reference: Built-in Datatypes and Facets](https://www.w3.org/TR/owl-quick-reference/#Built-in_Datatypes_and_Facets)
 
 ## Other W3C ontologies
 
