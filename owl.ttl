@@ -1,14 +1,25 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix grddl: <http://www.w3.org/2003/g/data-view#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
 
-<http://www.w3.org/2002/07/owl> a owl:Ontology ;
-     dc:title "The OWL 2 Schema vocabulary (OWL 2)" ;
-     rdfs:comment """
+# W3C OWL ontology
+
+## Ontology preferred namespace prefix and URI
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+## Other namespaces used
+### Core W3C ontologies (OWL 2 reserved vocabulary)
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
+prefix grddl: <http://www.w3.org/2003/g/data-view#>
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Ontology
+<http://www.w3.org/2002/07/owl>
+    a owl:Ontology ;
+    rdfs:label "W3C OWL ontology"@en ;
+    rdfs:comment """
   This ontology partially describes the built-in classes and
   properties that together form the basis of the RDF/XML syntax of OWL 2.
   The content of this ontology is based on Tables 6.1 and 6.2
@@ -26,24 +37,24 @@
   will cause it to become an OWL 2 Full ontology and may have other,
   unexpected, consequences.
    """ ;
-     rdfs:isDefinedBy
-          <http://www.w3.org/TR/owl2-mapping-to-rdf/>,
-          <http://www.w3.org/TR/owl2-rdf-based-semantics/>,
-          <http://www.w3.org/TR/owl2-syntax/> ;
-     rdfs:seeAlso
-          <http://www.w3.org/TR/owl2-rdf-based-semantics/#table-axiomatic-classes>,
-          <http://www.w3.org/TR/owl2-rdf-based-semantics/#table-axiomatic-properties> ;
-     owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
-     owl:versionIRI <http://www.w3.org/2002/07/owl> ;
-     owl:versionInfo "$Date: 2009/11/15 10:54:12 $" ;
-     grddl:namespaceTransformation <http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl> . 
+    rdfs:isDefinedBy
+        <http://www.w3.org/TR/owl2-mapping-to-rdf/>,
+        <http://www.w3.org/TR/owl2-rdf-based-semantics/>,
+        <http://www.w3.org/TR/owl2-syntax/> ;
+    rdfs:seeAlso
+        <http://www.w3.org/TR/owl2-rdf-based-semantics/#table-axiomatic-classes>,
+        <http://www.w3.org/TR/owl2-rdf-based-semantics/#table-axiomatic-properties> ;
+    owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+    owl:versionIRI <http://www.w3.org/2002/07/owl> ;
+    owl:versionInfo "$Date: 2009/11/15 10:54:12 $" ;
+    grddl:namespaceTransformation <http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl> . 
 
 
 owl:AllDifferent a rdfs:Class ;
-     rdfs:label "AllDifferent" ;
-     rdfs:comment "The class of collections of pairwise different individuals." ;
-     rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
-     rdfs:subClassOf rdfs:Resource . 
+    rdfs:label "AllDifferent" ;
+    rdfs:comment "The class of collections of pairwise different individuals." ;
+    rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
+    rdfs:subClassOf rdfs:Resource . 
 
 owl:AllDisjointClasses a rdfs:Class ;
      rdfs:label "AllDisjointClasses" ;

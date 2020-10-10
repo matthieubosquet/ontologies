@@ -1,10 +1,26 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
 
-<http://www.w3.org/2000/01/rdf-schema#> a owl:Ontology ;
-    dc:title "The RDF Schema vocabulary (RDFS)" .
+# W3C RDFS ontology
+
+## Ontology preferred namespace prefix and URI
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+## Other namespaces used
+### Core W3C ontologies (OWL 2 reserved vocabulary)
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Ontology
+<http://www.w3.org/2000/01/rdf-schema#>
+    a owl:Ontology ;
+    rdfs:label "W3C RDFS ontology"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+    vann:preferredNamespacePrefix "rdfs" ;
+    vann:preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI .
 
 rdfs:Resource a rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
