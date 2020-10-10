@@ -1,0 +1,355 @@
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
+
+# XSD datatypes ontology
+
+## Ontology preferred namespace prefix and URI
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+## Other namespaces used
+### Core W3C ontologies (OWL 2 reserved vocabulary)
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+### Other ontologies
+prefix vann: <http://purl.org/vocab/vann/>
+
+## Ontology
+<http://www.w3.org/2001/XMLSchema-datatypes>
+    a owl:Ontology ;
+    rdfs:label "XSD datatypes ontology"@en ;
+    rdfs:comment "The XML Schema Definition (XSD) language built-in types listed in this ontology are the RDF-compatible XSD types."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    rdfs:seeAlso
+        <https://www.w3.org/TR/owl-quick-reference/#Built-in_Datatypes_and_Facets>,
+        <https://www.w3.org/TR/rdf11-concepts/#xsd-datatypes>,
+        <https://www.w3.org/TR/xmlschema11-2/#built-in-datatypes>,
+        <http://www.w3.org/2001/XMLSchema-datatypes> ;
+    vann:preferredNamespacePrefix "xsd" ;
+    vann:preferredNamespaceUri "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI .
+
+## Datatype
+### Core types
+xsd:string
+    a rdfs:Datatype ;
+    rdfs:label "String"@en ;
+    rdfs:comment "Core type 'string': character strings (but not all Unicode character strings)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:boolean
+    a rdfs:Datatype ;
+    rdfs:label "Boolean"@en ;
+    rdfs:comment "Core type 'boolean': true, false."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:decimal
+    a rdfs:Datatype ;
+    rdfs:label "Decimal"@en ;
+    rdfs:comment "Core type 'decimal': arbitrary-precision decimal numbers."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)"
+        ]
+    ) .
+
+xsd:integer
+    a rdfs:Datatype ;
+    rdfs:label "Integer"@en ;
+    rdfs:comment "Core type 'integer': arbitrary-size integer numbers."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+### IEEE floating-point numbers
+xsd:double
+    a rdfs:Datatype ;
+    rdfs:label "Double"@en ;
+    rdfs:comment "IEEE floating-point numbers 'double': 64-bit floating point numbers incl. ±Inf, ±0, NaN."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|(\+|-)?INF|NaN"
+        ]
+    ) .
+
+xsd:float
+    a rdfs:Datatype ;
+    rdfs:label "Float"@en ;
+    rdfs:comment "IEEE floating-point numbers 'float': 32-bit floating point numbers incl. ±Inf, ±0, NaN."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "(\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|(\+|-)?INF|NaN"
+        ]
+    ) .
+
+### Time and date
+xsd:date
+    a rdfs:Datatype ;
+    rdfs:label "Date"@en ;
+    rdfs:comment "Time and date 'date': dates (yyyy-mm-dd) with or without timezone."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:time
+    a rdfs:Datatype ;
+    rdfs:label "Time"@en ;
+    rdfs:comment "Time and date 'time': Times (hh:mm:ss.sss…) with or without timezone."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:dateTime
+    a rdfs:Datatype ;
+    rdfs:label "Date time"@en ;
+    rdfs:comment "Time and date 'dateTime': date and time with or without timezone."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:dateTimeStamp
+    a rdfs:Datatype ;
+    rdfs:label "Date timestamp"@en ;
+    rdfs:comment "Time and date 'dateTimeStamp': date and time with required timezone."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+        [
+            a owl:Restriction ;
+            xsd:pattern ".*(Z|(\+|-)[0-9][0-9]:[0-9][0-9])"
+        ]
+    ) .
+
+### Recurring and partial dates
+xsd:gYear
+    a rdfs:Datatype ;
+    rdfs:label "Gregorian year"@en ;
+    rdfs:comment "Recurring and partial dates 'gYear': Gregorian calendar year (-yyyy)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:gMonth
+    a rdfs:Datatype ;
+    rdfs:label "Gregorian month"@en ;
+    rdfs:comment "Recurring and partial dates 'gMonth': Gregorian calendar month (--mm)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "--(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:gDay
+    a rdfs:Datatype ;
+    rdfs:label "Gregorian day of the month"@en ;
+    rdfs:comment "Recurring and partial dates 'gDay': Gregorian calendar day of the month (---dd)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "---(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:gYearMonth
+    a rdfs:Datatype ;
+    rdfs:label "Gregorian year and month"@en ;
+    rdfs:comment "Recurring and partial dates 'gYearMonth': Gregorian calendar year and month (-yyyy-mm)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:gMonthDay
+    a rdfs:Datatype ;
+    rdfs:label "Gregorian month and day"@en ;
+    rdfs:comment "Recurring and partial dates 'gMonthDay': Gregorian calendar month and day (--mm-dd)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+        ]
+    ) .
+
+xsd:duration
+    a rdfs:Datatype ;
+    rdfs:label "Duration"@en ;
+    rdfs:comment "Recurring and partial dates 'duration': Duration of time."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:yearMonthDuration
+    a rdfs:Datatype ;
+    rdfs:label "Duration of time in years and months"@en ;
+    rdfs:comment "Recurring and partial dates 'yearMonthDuration': Duration of time in years and months only. For example 11 years and 7 months '-P11Y7M'."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    rdfs:seeAlso <https://www.w3.org/TR/xmlschema11-2/#duration> .
+
+xsd:dayTimeDuration
+    a rdfs:Datatype ;
+    rdfs:label "Day time duration"@en ;
+    rdfs:comment "Recurring and partial dates 'dayTimeDuration': duration of time in days, hours, minutes and seconds only. For example 3 days 2 hours 5 minutes and 37 seconds '-P3DT2H5M37S'"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+### Limited-range integer numbers
+xsd:byte
+    a rdfs:Datatype ;
+    rdfs:label "Byte"@en ;
+    rdfs:comment "Limited-range integer numbers 'byte': -128…+127 (8 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:short
+    a rdfs:Datatype ;
+    rdfs:label "Short"@en ;
+    rdfs:comment "Limited-range integer numbers 'short': -32768…+32767 (16 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:int
+    a rdfs:Datatype ;
+    rdfs:label "Integer"@en ;
+    rdfs:comment "Limited-range integer numbers 'int': -2147483648…+2147483647 (32 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:long
+    a rdfs:Datatype ;
+    rdfs:label "Long"@en ;
+    rdfs:comment "Limited-range integer numbers 'long': -9223372036854775808…+9223372036854775807 (64 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:unsignedByte
+    a rdfs:Datatype ;
+    rdfs:label "Unsigned Byte"@en ;
+    rdfs:comment "Limited-range integer numbers 'unsignedByte': 0…255 (8 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:unsignedShort
+    a rdfs:Datatype ;
+    rdfs:label "Unsigned short"@en ;
+    rdfs:comment "Limited-range integer numbers 'unsignedShort': 0…65535 (16 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:unsignedInt
+    a rdfs:Datatype ;
+    rdfs:label "Unsigned integer"@en ;
+    rdfs:comment "Limited-range integer numbers 'unsignedInt': 0…4294967295 (32 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:unsignedLong
+    a rdfs:Datatype ;
+    rdfs:label "Unsigned long"@en ;
+    rdfs:comment "Limited-range integer numbers 'unsignedLong': 0…18446744073709551615 (64 bit)."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:positiveInteger
+    a rdfs:Datatype ;
+    rdfs:label "Positive integer"@en ;
+    rdfs:comment "Limited-range integer numbers 'positiveInteger': Integer numbers >0."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:nonNegativeInteger
+    a rdfs:Datatype ;
+    rdfs:label "Non-negative integer"@en ;
+    rdfs:comment "Limited-range integer numbers 'nonNegativeInteger': Integer numbers ≥0."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:negativeInteger
+    a rdfs:Datatype ;
+    rdfs:label "Negative integer"@en ;
+    rdfs:comment "Limited-range integer numbers 'negativeInteger': Integer numbers <0."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:nonPositiveInteger
+    a rdfs:Datatype ;
+    rdfs:label "Non-positive integer"@en ;
+    rdfs:comment "Limited-range integer numbers 'nonPositiveInteger': Integer numbers ≤0."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+### Encoded binary data
+xsd:hexBinary
+    a rdfs:Datatype ;
+    rdfs:label "Hexadecimal binary"@en ;
+    rdfs:comment "Encoded binary data 'hexBinary': hex-encoded binary data."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:base64Binary
+    a rdfs:Datatype ;
+    rdfs:label "Base-64 binary"@en ;
+    rdfs:comment "Encoded binary data 'base64Binary': Base64-encoded binary data."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+### Miscellaneous XSD types
+xsd:anyURI
+    a rdfs:Datatype ;
+    rdfs:label "Any URI"@en ;
+    rdfs:comment "Miscellaneous XSD types 'anyURI': absolute or relative URIs and IRIs."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:language
+    a rdfs:Datatype ;
+    rdfs:label "Language"@en ;
+    rdfs:comment "Miscellaneous XSD types 'language': Language tags per BCP47."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> ;
+    rdfs:seeAlso <https://tools.ietf.org/html/bcp47> ;
+    owl:withRestrictions (
+        [
+            a owl:Restriction ;
+            xsd:pattern "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"
+        ]
+    ) .
+
+xsd:normalizedString
+    a rdfs:Datatype ;
+    rdfs:label "Normalized string"@en ;
+    rdfs:comment "Miscellaneous XSD types 'normalizedString': Whitespace-normalized strings."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:token
+    a rdfs:Datatype ;
+    rdfs:label "Token"@en ;
+    rdfs:comment "Miscellaneous XSD types 'token': Tokenized strings."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:NMTOKEN
+    a rdfs:Datatype ;
+    rdfs:label "XML NMTOKEN"@en ;
+    rdfs:comment "Miscellaneous XSD types 'NMTOKEN': XML NMTOKENs."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:Name
+    a rdfs:Datatype ;
+    rdfs:label "XML name"@en ;
+    rdfs:comment "Miscellaneous XSD types 'Name': XML Names."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
+
+xsd:NCName
+    a rdfs:Datatype ;
+    rdfs:label "XML NC name"@en ;
+    rdfs:comment "Miscellaneous XSD types 'NCName': XML NCNames."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2001/XMLSchema> .
