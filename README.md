@@ -9,7 +9,7 @@ A collection of standard and well known ontologies serialised to [Turtle](https:
 
 ## Core W3C ontologies
 
-RDF, RDFS, OWL & XSD constitute the reserved vocabulary of the OWL 2 Web Ontology Language. Those 4 ontologies constitute therefore the backbone of the Semantic Web.
+RDF, RDFS, OWL & XSD constitute the reserved vocabulary of the OWL 2 Web Ontology Language. Those four ontologies are therefore the backbone of the Semantic Web.
 
 <blockquote cite="https://www.w3.org/TR/rdf-concepts/">
     <h3>Anyone Can Make Statements About Any Resource</h3>
