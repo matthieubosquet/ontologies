@@ -9,4 +9,4 @@ export const XSD: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `
 
 // Other ontologies
 export const DC: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `dublin_core_elements.ttl`));
-
+export const DCTERMS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `dublin_core_terms.ttl`));
