@@ -6,9 +6,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://purl.org/dc/terms/>
+    a owl:Ontology ;
+    rdfs:label "Dublin Core metadata terms ontology"@en ;
     dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
     dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
-    dcterms:title "DCMI Metadata Terms - other"@en .
+    dcterms:title "DCMI Metadata Terms - other"@en ;
+    vann:preferredNamespacePrefix "dcterms" ;
+    vann:preferredNamespaceUri "http://purl.org/dc/terms/"^^xsd:anyURI .
 
 dcterms:Agent
     dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
