@@ -1,0 +1,32 @@
+{
+  "name": "ontl",
+  "version": "0.1.0",
+  "description": "A collection of ontologies serialised in turtle, readable as stream.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .tsconfig.json",
+    "prepublishOnly": "npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthieubosquet/ontologies.git"
+  },
+  "keywords": [
+    "ontology",
+    "turtle",
+    "rdf",
+    "stream"
+  ],
+  "author": "Matthieu Bosquet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthieubosquet/ontologies/issues"
+  },
+  "homepage": "https://github.com/matthieubosquet/ontologies#readme",
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.7",
+    "@types/node": "^14.11.8",
+    "typescript": "^4.0.3"
+  }
+}
