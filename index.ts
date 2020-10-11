@@ -8,5 +8,5 @@ export const OWL: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `
 export const XSD: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `xsd.ttl`));
 
 // Other ontologies
-export const DC: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `dc.ttl`));
+export const DC: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `dublin_core_elements.ttl`));
 
