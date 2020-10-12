@@ -6,17 +6,24 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
+prefix dcterms: <http://purl.org/dc/terms/>
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
+prefix vann: <http://purl.org/vocab/vann/>
+
 
 sh:
-	a owl:Ontology ;
-	rdfs:label "W3C Shapes Constraint Language (SHACL) Vocabulary"@en ;
-	rdfs:comment "This vocabulary defines terms used in SHACL, the W3C Shapes Constraint Language."@en ;
-	sh:declare [
-		sh:prefix "sh" ;
-		sh:namespace "http://www.w3.org/ns/shacl#" ;
-	] ;
-	sh:suggestedShapesGraph <http://www.w3.org/ns/shacl-shacl#> .
+    a owl:Ontology ;
+    rdfs:label "W3C Shapes Constraint Language (SHACL) Vocabulary"@en ;
+    rdfs:comment "This vocabulary defines terms used in SHACL, the W3C Shapes Constraint Language."@en ;
+    sh:declare [
+        sh:prefix "sh" ;
+        sh:namespace "http://www.w3.org/ns/shacl#" ;
+    ] ;
+    rdfs:isDefinedBy sh: ;
+    dcterms:issued "2017-07-20"^^xsd:date ;
+    sh:suggestedShapesGraph <http://www.w3.org/ns/shacl-shacl#> ;
+    vann:preferredNamespacePrefix "shacl" ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/shacl#"^^xsd:anyURI .
 
 
 # Shapes vocabulary -----------------------------------------------------------
