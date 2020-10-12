@@ -25,13 +25,12 @@ prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix ldp: <http://www.w3.org/ns/ldp#>
 prefix posixstat: <http://www.w3.org/ns/posix/stat#>
 prefix schema: <https://schema.org/>
-prefix sh: <http://www.w3.org/ns/shacl#>
+prefix shacl: <http://www.w3.org/ns/shacl#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix skosxl: <http://www.w3.org/2008/05/skos-xl#>
 prefix solidterms: <http://www.w3.org/ns/solid/terms#>
 prefix swapdoc: <http://www.w3.org/2000/10/swap/pim/doc#>
 prefix ui: <http://www.w3.org/ns/ui#>
-prefix vann: <http://purl.org/vocab/vann/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix vcard: <http://www.w3.org/2006/vcard/ns#>
 prefix ws: <http://www.w3.org/ns/pim/space#>
