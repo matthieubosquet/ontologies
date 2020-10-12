@@ -1,9 +1,21 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcam: <http://purl.org/dc/dcam/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
+
+# Dublin Core terms ontology
+
+## Ontology preferred namespace prefix and URI
+prefix dcterms: <http://purl.org/dc/terms/>
+
+## Other namespaces used
+### Core W3C ontologies
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+### Other ontologies
+prefix dcam: <http://purl.org/dc/dcam/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix vann: <http://purl.org/vocab/vann/>
 
 <http://purl.org/dc/terms/>
     a owl:Ontology ;
