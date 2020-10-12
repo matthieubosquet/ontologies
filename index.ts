@@ -22,6 +22,7 @@ export const LDP: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `
 export const POSIXSTAT: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `posix_stat.ttl`));
 export const SCHEMA: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `schema.ttl`));
 export const SHACL: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `shacl.ttl`));
+export const SHAPETREE: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `shapetree.ttl`));
 export const SKOS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `skos.ttl`));
 export const SKOSXL: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `skos-xl.ttl`));
 export const SOLIDTERMS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `solid_terms.ttl`));
