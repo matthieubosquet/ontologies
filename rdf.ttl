@@ -33,6 +33,7 @@ prefix vann: <http://purl.org/vocab/vann/>
         <https://www.w3.org/TR/rdf11-datasets/>,
         <https://www.w3.org/TR/rdf11-testcases/>,
         <https://www.w3.org/TR/rdf-json/> ;
+    dcterms:issued "2014-02-25"^^xsd:date ;
     vann:preferredNamespacePrefix "rdf" ;
     vann:preferredNamespaceUri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI .
 
