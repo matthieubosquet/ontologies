@@ -1,0 +1,809 @@
+#Processed by Id
+        #    using base file:///devel/WWW/ns/iana/link-relations/raw-relation.ttl
+             @prefix : <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix XML: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix html: <https://tools.ietf.org/html/> .
+    @prefix li: <http://www.w3.org/TR/2011/WD-html5-20110113/links.html#> .
+    @prefix lin: <http://www.w3.org/TR/html5/links.html#> .
+    @prefix link: <./> .
+    @prefix n0: <http://www.w3.org/TR/1999/> .
+    @prefix n1: <http://www.w3.org/TR/powder-dr/#> .
+    @prefix pingb: <http://www.hixie.ch/specs/pingback/> .
+    @prefix prelo: <http://www.w3.org/TR/preload/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix re: <http://www.w3.org/TR/resource-hints/> .
+    @prefix reg: <https://www.w3.org/ns/assignments/reg#> .
+    @prefix res: <https://www.w3.org/TR/resource-hints/> .
+    @prefix terms: <http://purl.org/dc/terms/> .
+    @prefix web: <http://www.w3.org/TR/webmention/> .
+    
+    <>     <#registry> <#link-relations> .
+    
+    <#about>     a rdf:Property;
+         terms:description "Refers to a resource that is the subject of the link's context.";
+         :definedBy link:link-relations;
+         :label "about";
+         reg:spec "rfc6903 , section 2" .
+    
+    <#alternate>     a rdf:Property;
+         terms:description "Refers to a substitute for this context";
+         :definedBy link:link-relations;
+         :label "alternate";
+         reg:spec  [
+             reg:xref lin:link-type-alternate ] .
+    
+    <#appendix>     a rdf:Property;
+         terms:description "Refers to an appendix.";
+         :definedBy link:link-relations;
+         :label "appendix";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#archives>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description """Refers to a collection of records, documents, or other
+      materials of historical interest.""";
+         :definedBy link:link-relations;
+         :label "archives";
+         reg:spec  [
+             reg:xref li:rel-archives ] .
+    
+    <#author>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description "Refers to the context's author.";
+         :definedBy link:link-relations;
+         :label "author";
+         reg:spec  [
+             reg:xref lin:link-type-author ] .
+    
+    <#blocked-by>     a rdf:Property;
+         terms:date "2015-12-21"^^XML:date;
+         terms:description """Identifies the entity that blocks access to a resource
+      following receipt of a legal demand.""";
+         :definedBy link:link-relations;
+         :label "blocked-by";
+         reg:spec  [
+             reg:xref html:rfc7725 ] .
+    
+    <#bookmark>     a rdf:Property;
+         terms:description "Gives a permanent link to use for bookmarking purposes.";
+         :definedBy link:link-relations;
+         :label "bookmark";
+         reg:spec  [
+             reg:xref lin:link-type-bookmark ] .
+    
+    <#canonical>     a rdf:Property;
+         terms:description "Designates the preferred version of a resource (the IRI and its contents).";
+         :definedBy link:link-relations;
+         :label "canonical";
+         reg:spec  [
+             reg:xref html:rfc6596 ] .
+    
+    <#chapter>     a rdf:Property;
+         terms:description "Refers to a chapter in a collection of resources.";
+         :definedBy link:link-relations;
+         :label "chapter";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#collection>     a rdf:Property;
+         terms:description "The target IRI points to a resource which represents the collection resource for the context IRI.";
+         :definedBy link:link-relations;
+         :label "collection";
+         reg:spec  [
+             reg:xref html:rfc6573 ] .
+    
+    <#contents>     a rdf:Property;
+         terms:description "Refers to a table of contents.";
+         :definedBy link:link-relations;
+         :label "contents";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#convertedFrom>     a rdf:Property;
+         terms:date "2016-08-12"^^XML:date;
+         terms:description """The document linked to was later converted to the
+      document that contains this link relation.  For example, an RFC can
+      have a link to the Internet-Draft that became the RFC; in that case,
+      the link relation would be "convertedFrom".""";
+         :comment """This relation is different than "predecessor-version" in that
+      "predecessor-version" is for items in a version control system.  It
+      is also different than "previous" in that this relation is used for
+      converted resources, not those that are part of a sequence of
+      resources.""";
+         :definedBy link:link-relations;
+         :label "convertedFrom";
+         reg:spec  [
+             reg:xref html:rfc7991 ] .
+    
+    <#copyright>     a rdf:Property;
+         terms:description """Refers to a copyright statement that applies to the
+    link's context.""";
+         :definedBy link:link-relations;
+         :label "copyright";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#create-form>     a rdf:Property;
+         terms:description "The target IRI points to a resource where a submission form can be obtained.";
+         :definedBy link:link-relations;
+         :label "create-form";
+         reg:spec  [
+             reg:xref html:rfc6861 ] .
+    
+    <#current>     a rdf:Property;
+         terms:description """Refers to a resource containing the most recent
+      item(s) in a collection of resources.""";
+         :definedBy link:link-relations;
+         :label "current";
+         reg:spec  [
+             reg:xref html:rfc5005 ] .
+    
+    <#describedby>     a rdf:Property;
+         terms:description """Refers to a resource providing information about the
+      link's context.""";
+         :definedBy link:link-relations;
+         :label "describedby";
+         reg:spec  [
+             reg:xref n1:assoc-linking ] .
+    
+    <#describes>     a rdf:Property;
+         terms:description """The relationship A 'describes' B asserts that
+      resource A provides a description of resource B. There are no
+      constraints on the format or representation of either A or B,
+      neither are there any further constraints on either resource.""";
+         :comment """This link relation type is the inverse of the 'describedby'
+        relation type.  While 'describedby' establishes a relation from
+        the described resource back to the resource that describes it,
+        'describes' established a relation from the describing resource to
+        the resource it describes.  If B is 'describedby' A, then A
+        'describes' B.""";
+         :definedBy link:link-relations;
+         :label "describes";
+         reg:spec  [
+             reg:xref html:rfc6892 ] .
+    
+    <#disclosure>     a rdf:Property;
+         terms:description """Refers to a list of patent disclosures made with respect to 
+      material for which 'disclosure' relation is specified.""";
+         :definedBy link:link-relations;
+         :label "disclosure";
+         reg:spec  [
+             reg:xref html:rfc6579 ] .
+    
+    <#dns-prefetch>     a rdf:Property;
+         terms:date "2016-02-29"^^XML:date;
+         terms:description """Used to indicate an origin that will be used to fetch required 
+      resources for the link context, and that the user agent ought to resolve 
+      as early as possible.""";
+         :definedBy link:link-relations;
+         :label "dns-prefetch";
+         reg:spec  [
+             reg:xref res: ] .
+    
+    <#duplicate>     a rdf:Property;
+         terms:description """Refers to a resource whose available representations
+      are byte-for-byte identical with the corresponding representations of
+      the context IRI.""";
+         :comment """This relation is for static resources.  That is, an HTTP GET
+      request on any duplicate will return the same representation.  It
+      does not make sense for dynamic or POSTable resources and should not
+      be used for them.""";
+         :definedBy link:link-relations;
+         :label "duplicate";
+         reg:spec  [
+             reg:xref html:rfc6249 ] .
+    
+    <#edit>     a rdf:Property;
+         terms:description """Refers to a resource that can be used to edit the
+      link's context.""";
+         :definedBy link:link-relations;
+         :label "edit";
+         reg:spec  [
+             reg:xref html:rfc5023 ] .
+    
+    <#edit-form>     a rdf:Property;
+         terms:description """The target IRI points to a resource where a submission form for
+      editing associated resource can be obtained.""";
+         :definedBy link:link-relations;
+         :label "edit-form";
+         reg:spec  [
+             reg:xref html:rfc6861 ] .
+    
+    <#edit-media>     a rdf:Property;
+         terms:description """Refers to a resource that can be used to edit media
+      associated with the link's context.""";
+         :definedBy link:link-relations;
+         :label "edit-media";
+         reg:spec  [
+             reg:xref html:rfc5023 ] .
+    
+    <#enclosure>     a rdf:Property;
+         terms:description """Identifies a related resource that is potentially
+      large and might require special handling.""";
+         :definedBy link:link-relations;
+         :label "enclosure";
+         reg:spec  [
+             reg:xref html:rfc4287 ] .
+    
+    <#first>     a rdf:Property;
+         terms:description """An IRI that refers to the furthest preceding resource
+    in a series of resources.""";
+         :comment """This relation type registration did not indicate a
+      reference.  Originally requested by Mark Nottingham in December
+      2004.""";
+         :definedBy link:link-relations;
+         :label "first";
+         reg:spec  [
+             reg:xref html:RFC-nottingham-rfc5988bis-08 ] .
+    
+    <#glossary>     a rdf:Property;
+         terms:description "Refers to a glossary of terms.";
+         :definedBy link:link-relations;
+         :label "glossary";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#help>     a rdf:Property;
+         terms:description "Refers to context-sensitive help.";
+         :definedBy link:link-relations;
+         :label "help";
+         reg:spec  [
+             reg:xref lin:link-type-help ] .
+    
+    <#hosts>     a rdf:Property;
+         terms:description """Refers to a resource hosted by the server indicated by
+      the link context.""";
+         :comment """This relation is used in CoRE where links are retrieved as a
+      "/.well-known/core" resource representation, and is the default
+      relation type in the CoRE Link Format.""";
+         :definedBy link:link-relations;
+         :label "hosts";
+         reg:spec  [
+             reg:xref html:rfc6690 ] .
+    
+    <#hub>     a rdf:Property;
+         terms:description """Refers to a hub that enables registration for
+    notification of updates to the context.""";
+         :comment "This relation type was requested by Brett Slatkin.";
+         :definedBy link:link-relations;
+         :label "hub";
+         reg:spec  [
+             reg:xref <http://pubsubhubbub.googlecode.com> ] .
+    
+    <#icon>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description "Refers to an icon representing the link's context.";
+         :definedBy link:link-relations;
+         :label "icon";
+         reg:spec  [
+             reg:xref lin:link-type-icon ] .
+    
+    <#index>     a rdf:Property;
+         terms:description "Refers to an index.";
+         :definedBy link:link-relations;
+         :label "index";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#item>     a rdf:Property;
+         terms:description "The target IRI points to a resource that is a member of the collection represented by the context IRI.";
+         :definedBy link:link-relations;
+         :label "item";
+         reg:spec  [
+             reg:xref html:rfc6573 ] .
+    
+    <#last>     a rdf:Property;
+         terms:description """An IRI that refers to the furthest following resource
+      in a series of resources.""";
+         :comment """This relation type registration did not indicate a
+      reference. Originally requested by Mark Nottingham in December
+      2004.""";
+         :definedBy link:link-relations;
+         :label "last";
+         reg:spec  [
+             reg:xref html:RFC-nottingham-rfc5988bis-08 ] .
+    
+    <#latest-version>     a rdf:Property;
+         terms:description """Points to a resource containing the latest (e.g.,
+      current) version of the context.""";
+         :definedBy link:link-relations;
+         :label "latest-version";
+         reg:spec  [
+             reg:xref html:rfc5829 ] .
+    
+    <#license>     a rdf:Property;
+         terms:description "Refers to a license associated with this context.";
+         :comment """For implications of use in HTML, see: 
+      http://www.w3.org/TR/html5/links.html#link-type-license""";
+         :definedBy link:link-relations;
+         :label "license";
+         reg:spec  [
+             reg:xref html:rfc4946 ] .
+    
+    <#link-relations>     terms:created "2005-08-26"^^XML:date;
+         terms:title "Link Relations";
+         reg:id "link-relations";
+         reg:registry <#link-relations-1>;
+         reg:updated "2017-08-23" .
+    
+    <#link-relations-1>     terms:title "Link Relation Types";
+         reg:expert "Mark Nottingham, Julian Reschke, Jan Algermissen";
+         reg:id "link-relations-1";
+         reg:record <#about>,
+                <#alternate>,
+                <#appendix>,
+                <#archives>,
+                <#author>,
+                <#blocked-by>,
+                <#bookmark>,
+                <#canonical>,
+                <#chapter>,
+                <#collection>,
+                <#contents>,
+                <#convertedFrom>,
+                <#copyright>,
+                <#create-form>,
+                <#current>,
+                <#describedby>,
+                <#describes>,
+                <#disclosure>,
+                <#dns-prefetch>,
+                <#duplicate>,
+                <#edit>,
+                <#edit-form>,
+                <#edit-media>,
+                <#enclosure>,
+                <#first>,
+                <#glossary>,
+                <#help>,
+                <#hosts>,
+                <#hub>,
+                <#icon>,
+                <#index>,
+                <#item>,
+                <#last>,
+                <#latest-version>,
+                <#license>,
+                <#lrdd>,
+                <#memento>,
+                <#monitor>,
+                <#monitor-group>,
+                <#next>,
+                <#next-archive>,
+                <#nofollow>,
+                <#noreferrer>,
+                <#original>,
+                <#payment>,
+                <#pingback>,
+                <#preconnect>,
+                <#predecessor-version>,
+                <#prefetch>,
+                <#preload>,
+                <#prerender>,
+                <#prev>,
+                <#prev-archive>,
+                <#preview>,
+                <#previous>,
+                <#privacy-policy>,
+                <#profile>,
+                <#related>,
+                <#replies>,
+                <#restconf>,
+                <#search>,
+                <#section>,
+                <#self>,
+                <#service>,
+                <#start>,
+                <#stylesheet>,
+                <#subsection>,
+                <#successor-version>,
+                <#tag>,
+                <#terms-of-service>,
+                <#timegate>,
+                <#timemap>,
+                <#type>,
+                <#up>,
+                <#version-history>,
+                <#via>,
+                <#webmention>,
+                <#working-copy>,
+                <#working-copy-of>;
+         reg:registration_rule "Specification Required";
+         reg:xref html:RFC-nottingham-rfc5988bis-08 .
+    
+    <#lrdd>     a rdf:Property;
+         terms:description """Refers to further information about the link's context,
+      expressed as a LRDD ("Link-based Resource Descriptor Document")
+      resource.  See  rfc6415  for information about
+      processing this relation type in host-meta documents. When used
+      elsewhere, it refers to additional links and other metadata.
+      Multiple instances indicate additional LRDD resources. LRDD
+      resources MUST have an "application/xrd+xml" representation, and
+      MAY have others.""";
+         :definedBy link:link-relations;
+         :label "lrdd";
+         reg:spec  [
+             reg:xref html:rfc6415 ] .
+    
+    <#memento>     a rdf:Property;
+         terms:date "2013-11-01"^^XML:date;
+         terms:description "The Target IRI points to a Memento, a fixed resource that will not change state anymore.";
+         :comment """A Memento for an Original Resource is a resource that
+      encapsulates a prior state of the Original Resource.""";
+         :definedBy link:link-relations;
+         :label "memento";
+         reg:spec  [
+             reg:xref html:rfc7089 ] .
+    
+    <#monitor>     a rdf:Property;
+         terms:description "Refers to a resource that can be used to monitor changes in an HTTP resource.";
+         :definedBy link:link-relations;
+         :label "monitor";
+         reg:spec  [
+             reg:xref html:rfc5989 ] .
+    
+    <#monitor-group>     a rdf:Property;
+         terms:description "Refers to a resource that can be used to monitor changes in a specified group of HTTP resources.";
+         :definedBy link:link-relations;
+         :label "monitor-group";
+         reg:spec  [
+             reg:xref html:rfc5989 ] .
+    
+    <#next>     a rdf:Property;
+         terms:date "2006-02-02"^^XML:date;
+         terms:description """Indicates that the link's context is a part of a series, and
+      that the next in the series is the link target.""";
+         :definedBy link:link-relations;
+         :label "next";
+         reg:spec  [
+             reg:xref lin:link-type-next ] .
+    
+    <#next-archive>     a rdf:Property;
+         terms:description "Refers to the immediately following archive resource.";
+         :definedBy link:link-relations;
+         :label "next-archive";
+         reg:spec  [
+             reg:xref html:rfc5005 ] .
+    
+    <#nofollow>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description "Indicates that the context’s original author or publisher does not endorse the link target.";
+         :definedBy link:link-relations;
+         :label "nofollow";
+         reg:spec  [
+             reg:xref lin:link-type-nofollow ] .
+    
+    <#noreferrer>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description "Indicates that no referrer information is to be leaked when following the link.";
+         :definedBy link:link-relations;
+         :label "noreferrer";
+         reg:spec  [
+             reg:xref lin:link-type-noreferrer ] .
+    
+    <#original>     a rdf:Property;
+         terms:date "2013-11-01"^^XML:date;
+         terms:description "The Target IRI points to an Original Resource.";
+         :comment """An Original Resource is a resource that exists or used to
+      exist, and for which access to one of its prior states may be
+      required.""";
+         :definedBy link:link-relations;
+         :label "original";
+         reg:spec  [
+             reg:xref html:rfc7089 ] .
+    
+    <#payment>     a rdf:Property;
+         terms:description "Indicates a resource where payment is accepted.";
+         :comment """This relation type registration did not indicate a
+      reference.  Requested by Joshua Kinberg and Robert Sayre.  It is
+      meant as a general way to facilitate acts of payment, and thus
+      this specification makes no assumptions on the type of payment or
+      transaction protocol.  Examples may include a web page where
+      donations are accepted or where goods and services are available
+      for purchase. rel="payment" is not intended to initiate an
+      automated transaction.  In Atom documents, a link element with a
+      rel="payment" attribute may exist at the feed/channel level and/or
+      the entry/item level.  For example, a rel="payment" link at the
+      feed/channel level may point to a "tip jar" URI, whereas an entry/
+      item containing a book review may include a rel="payment" link
+      that points to the location where the book may be purchased
+      through an online retailer.""";
+         :definedBy link:link-relations;
+         :label "payment";
+         reg:spec  [
+             reg:xref html:RFC-nottingham-rfc5988bis-08 ] .
+    
+    <#pingback>     a rdf:Property;
+         terms:date "2016-02-04"^^XML:date;
+         terms:description "Gives the address of the pingback resource for the link context.";
+         :definedBy link:link-relations;
+         :label "pingback";
+         reg:spec  [
+             reg:xref pingb:pingback ] .
+    
+    <#preconnect>     a rdf:Property;
+         terms:date "2016-02-29"^^XML:date;
+         terms:description """Used to indicate an origin that will be used to fetch required 
+      resources for the link context. Initiating an early connection, which 
+      includes the DNS lookup, TCP handshake, and optional TLS negotiation, 
+      allows the user agent to mask the high latency costs of establishing a 
+      connection.""";
+         :definedBy link:link-relations;
+         :label "preconnect";
+         reg:spec  [
+             reg:xref res: ] .
+    
+    <#predecessor-version>     a rdf:Property;
+         terms:description """Points to a resource containing the predecessor
+      version in the version history.""";
+         :definedBy link:link-relations;
+         :label "predecessor-version";
+         reg:spec  [
+             reg:xref html:rfc5829 ] .
+    
+    <#prefetch>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description """The prefetch link relation type is used to identify a resource 
+      that might be required by the next navigation from the link context, and 
+      that the user agent ought to fetch, such that the user agent can deliver a 
+      faster response once the resource is requested in the future.""";
+         :definedBy link:link-relations;
+         :label "prefetch";
+         reg:spec  [
+             reg:xref re: ];
+         reg:updated "2016-03-03"^^XML:date .
+    
+    <#preload>     a rdf:Property;
+         terms:date "2016-01-22"^^XML:date;
+         terms:description """Refers to a resource that should be loaded early in the 
+      processing of the link's context, without blocking rendering.""";
+         :comment "Additional target attributes establish the detailed fetch properties of the link.";
+         :definedBy link:link-relations;
+         :label "preload";
+         reg:spec  [
+             reg:xref prelo: ] .
+    
+    <#prerender>     a rdf:Property;
+         terms:date "2016-02-29"^^XML:date;
+         terms:description """Used to identify a resource that might be required by the next 
+      navigation from the link context, and that the user agent ought to fetch 
+      and execute, such that the user agent can deliver a faster response once 
+      the resource is requested in the future.""";
+         :definedBy link:link-relations;
+         :label "prerender";
+         reg:spec  [
+             reg:xref res: ] .
+    
+    <#prev>     a rdf:Property;
+         terms:description """Indicates that the link's context is a part of a series, and
+      that the previous in the series is the link target.""";
+         :definedBy link:link-relations;
+         :label "prev";
+         reg:spec  [
+             reg:xref lin:link-type-prev ] .
+    
+    <#prev-archive>     a rdf:Property;
+         terms:description "Refers to the immediately preceding archive resource.";
+         :definedBy link:link-relations;
+         :label "prev-archive";
+         reg:spec  [
+             reg:xref html:rfc5005 ] .
+    
+    <#preview>     a rdf:Property;
+         terms:description "Refers to a resource that provides a preview of the link's context.";
+         :definedBy link:link-relations;
+         :label "preview";
+         reg:spec "rfc6903 , section 3" .
+    
+    <#previous>     a rdf:Property;
+         terms:description """Refers to the previous resource in an ordered series
+      of resources.  Synonym for "prev".""";
+         :definedBy link:link-relations;
+         :label "previous";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#privacy-policy>     a rdf:Property;
+         terms:description "Refers to a privacy policy associated with the link's context.";
+         :definedBy link:link-relations;
+         :label "privacy-policy";
+         reg:spec "rfc6903 , section 4" .
+    
+    <#profile>     a rdf:Property;
+         terms:description """Identifying that a resource representation conforms
+to a certain profile, without affecting the non-profile semantics
+of the resource representation.""";
+         :comment """Profile URIs are primarily intended to be used as
+identifiers, and thus clients SHOULD NOT indiscriminately access
+profile URIs.""";
+         :definedBy link:link-relations;
+         :label "profile";
+         reg:spec  [
+             reg:xref html:rfc6906 ] .
+    
+    <#related>     a rdf:Property;
+         terms:description "Identifies a related resource.";
+         :definedBy link:link-relations;
+         :label "related";
+         reg:spec  [
+             reg:xref html:rfc4287 ] .
+    
+    <#replies>     a rdf:Property;
+         terms:description """Identifies a resource that is a reply to the context
+      of the link.""";
+         :definedBy link:link-relations;
+         :label "replies";
+         reg:spec  [
+             reg:xref html:rfc4685 ] .
+    
+    <#restconf>     a rdf:Property;
+         terms:description """Identifies the root of RESTCONF API as configured on this HTTP server.
+      The "restconf" relation defines the root of the API defined in RFC8040.
+      Subsequent revisions of RESTCONF will use alternate relation values to support 
+      protocol versioning.""";
+         :definedBy link:link-relations;
+         :label "restconf";
+         reg:spec  [
+             reg:xref html:rfc8040 ] .
+    
+    <#search>     a rdf:Property;
+         terms:date "2010-11-09"^^XML:date;
+         terms:description """Refers to a resource that can be used to search through
+      the link's context and related resources.""";
+         :definedBy link:link-relations;
+         :label "search";
+         reg:spec  [
+             reg:xref <http://www.opensearch.org/Specifications/OpenSearch/1.1> ] .
+    
+    <#section>     a rdf:Property;
+         terms:description "Refers to a section in a collection of resources.";
+         :definedBy link:link-relations;
+         :label "section";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#self>     a rdf:Property;
+         terms:description "Conveys an identifier for the link's context.";
+         :definedBy link:link-relations;
+         :label "self";
+         reg:spec  [
+             reg:xref html:rfc4287 ] .
+    
+    <#service>     a rdf:Property;
+         terms:description """Indicates a URI that can be used to retrieve a
+      service document.""";
+         :comment """When used in an Atom document, this relation type specifies
+      Atom Publishing Protocol service documents by default.  Requested
+      by James Snell.""";
+         :definedBy link:link-relations;
+         :label "service";
+         reg:spec  [
+             reg:xref html:rfc5023 ] .
+    
+    <#start>     a rdf:Property;
+         terms:description """Refers to the first resource in a collection of
+      resources.""";
+         :definedBy link:link-relations;
+         :label "start";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#stylesheet>     a rdf:Property;
+         terms:description "Refers to a stylesheet.";
+         :definedBy link:link-relations;
+         :label "stylesheet";
+         reg:spec  [
+             reg:xref lin:link-type-stylesheet ] .
+    
+    <#subsection>     a rdf:Property;
+         terms:description """Refers to a resource serving as a subsection in a
+      collection of resources.""";
+         :definedBy link:link-relations;
+         :label "subsection";
+         reg:spec  [
+             reg:xref n0:REC-html401-19991224 ] .
+    
+    <#successor-version>     a rdf:Property;
+         terms:description """Points to a resource containing the successor version
+      in the version history.""";
+         :definedBy link:link-relations;
+         :label "successor-version";
+         reg:spec  [
+             reg:xref html:rfc5829 ] .
+    
+    <#tag>     a rdf:Property;
+         terms:description """Gives a tag (identified by the given address) that applies to
+      the current document.""";
+         :definedBy link:link-relations;
+         :label "tag";
+         reg:spec  [
+             reg:xref lin:link-type-tag ] .
+    
+    <#terms-of-service>     a rdf:Property;
+         terms:description "Refers to the terms of service associated with the link's context.";
+         :definedBy link:link-relations;
+         :label "terms-of-service";
+         reg:spec "rfc6903 , section 5" .
+    
+    <#timegate>     a rdf:Property;
+         terms:date "2013-11-01"^^XML:date;
+         terms:description "The Target IRI points to a TimeGate for an Original Resource.";
+         :comment """A TimeGate for an Original Resource is a resource that is
+      capable of datetime negotiation to support access to prior states
+      of the Original Resource.""";
+         :definedBy link:link-relations;
+         :label "timegate";
+         reg:spec  [
+             reg:xref html:rfc7089 ] .
+    
+    <#timemap>     a rdf:Property;
+         terms:date "2013-11-01"^^XML:date;
+         terms:description "The Target IRI points to a TimeMap for an Original Resource.";
+         :comment """A TimeMap for an Original Resource is a resource from which
+      a list of URIs of Mementos of the Original Resource is available.""";
+         :definedBy link:link-relations;
+         :label "timemap";
+         reg:spec  [
+             reg:xref html:rfc7089 ] .
+    
+    <#type>     a rdf:Property;
+         terms:description "Refers to a resource identifying the abstract semantic type of which the link's context is considered to be an instance.";
+         :definedBy link:link-relations;
+         :label "type";
+         reg:spec "rfc6903 , section 6" .
+    
+    <#up>     a rdf:Property;
+         terms:description """Refers to a parent document in a hierarchy of
+      documents.""";
+         :comment """This relation type registration did not indicate a
+      reference.  Requested by Noah Slater.""";
+         :definedBy link:link-relations;
+         :label "up";
+         reg:spec  [
+             reg:xref html:RFC-nottingham-rfc5988bis-08 ] .
+    
+    <#version-history>     a rdf:Property;
+         terms:description """Points to a resource containing the version history
+      for the context.""";
+         :definedBy link:link-relations;
+         :label "version-history";
+         reg:spec  [
+             reg:xref html:rfc5829 ] .
+    
+    <#via>     a rdf:Property;
+         terms:description """Identifies a resource that is the source of the
+      information in the link's context.""";
+         :definedBy link:link-relations;
+         :label "via";
+         reg:spec  [
+             reg:xref html:rfc4287 ] .
+    
+    <#webmention>     a rdf:Property;
+         terms:date "2016-04-19"^^XML:date;
+         terms:description """Identifies a target URI that supports the Webmention protcol.
+    This allows clients that mention a resource in some form of publishing process
+    to contact that endpoint and inform it that this resource has been mentioned.""";
+         :comment """This is a similar "Linkback" mechanism to the ones of Refback, Trackback, and Pingback.
+    It uses a different protocol, though, and thus should be discoverable through its own link
+    relation type.""";
+         :definedBy link:link-relations;
+         :label "webmention";
+         reg:spec  [
+             reg:xref web: ] .
+    
+    <#working-copy>     a rdf:Property;
+         terms:description "Points to a working copy for this resource.";
+         :definedBy link:link-relations;
+         :label "working-copy";
+         reg:spec  [
+             reg:xref html:rfc5829 ] .
+    
+    <#working-copy-of>     a rdf:Property;
+         terms:description """Points to the versioned resource from which this
+      working copy was obtained.""";
+         :definedBy link:link-relations;
+         :label "working-copy-of";
+         reg:spec  [
+             reg:xref html:rfc5829 ] .
+    
