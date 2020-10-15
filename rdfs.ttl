@@ -12,6 +12,7 @@ prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 ### Other ontologies
+prefix dcterms: <http://purl.org/dc/terms/>
 prefix vann: <http://purl.org/vocab/vann/>
 
 ## Ontology
@@ -19,8 +20,13 @@ prefix vann: <http://purl.org/vocab/vann/>
     a owl:Ontology ;
     rdfs:label "W3C RDFS ontology"@en ;
     rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+    rdfs:seeAlso
+        <https://www.w3.org/TR/rdf-schema/>,
+        <http://www.w3.org/2000/01/rdf-schema-more> ;
+    dcterms:issued "2014-02-25"^^xsd:date ;
     vann:preferredNamespacePrefix "rdfs" ;
     vann:preferredNamespaceUri "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI .
+
 
 rdfs:Resource a rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
@@ -121,5 +127,3 @@ rdfs:Datatype a rdfs:Class ;
     rdfs:label "Datatype" ;
     rdfs:comment "The class of RDF datatypes." ;
     rdfs:subClassOf rdfs:Class .
-
-<http://www.w3.org/2000/01/rdf-schema#> rdfs:seeAlso <http://www.w3.org/2000/01/rdf-schema-more> .
