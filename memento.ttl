@@ -1,0 +1,96 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mementoweb.org/ns#Memento> a rdfs:Class;
+   rdfs:label "Memento";
+   rdfs:comment "A resource that encapsulates a prior state of the Original Resource. A Memento for an Original Resource as it existed at time T is a resource that encapsulates the state the Original Resource had at time T.";
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:subClassOf <http://www.w3.org/2006/gen/ont#TimeSpecificResource>;
+   owl:disjointWith <http://mementoweb.org/ns#TimeMap> .
+
+<http://mementoweb.org/ns#OriginalResource> a rdfs:Class;
+   rdfs:label "Original Resource";
+   rdfs:comment "A resource that exists or used to exist, and for which access to one of its prior states may be required.";
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:subClassOf <http://www.w3.org/2006/gen/ont#TimeGenericResource>;
+   owl:disjointWith <http://mementoweb.org/ns#TimeMap> .
+
+<http://mementoweb.org/ns#TimeGate> a rdfs:Class;
+   rdfs:label "TimeGate";
+   rdfs:comment "A resource that is capable of datetime negotiation to support access to prior states of the Original Resource.";
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   owl:disjointWith <http://mementoweb.org/ns#TimeMap> .
+
+<http://mementoweb.org/ns#TimeMap> a rdfs:Class;
+   rdfs:label "TimeMap";
+   rdfs:comment "A resource from which a list of URIs of Mementos of the Original Resource is available.";
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   owl:disjointWith <http://mementoweb.org/ns#TimeGate>,
+     <http://mementoweb.org/ns#OriginalResource>,
+     <http://mementoweb.org/ns#Memento> .
+
+<http://mementoweb.org/ns#memento> a rdf:Property;
+   rdfs:label "memento relation type";
+   rdfs:comment """The memento relation type is used to point from a TimeGate or a Memento for an Original Resource, as well as from the Original Resource itself, to a Memento for the Original
+      Resource.""";
+   rdfs:domain <http://mementoweb.org/ns#TimeGate>,
+     <http://mementoweb.org/ns#OriginalResource>,
+     <http://mementoweb.org/ns#Memento>;
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:range <http://mementoweb.org/ns#Memento>;
+   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc7089.txt>,
+     <https://www.iana.org/assignments/link-relations/link-relations.xhtml>;
+   rdfs:subPropertyOf dc:isVersionOf .
+
+<http://mementoweb.org/ns#mementoDatetime> a rdf:Property,
+     owl:FunctionalProperty;
+   rdfs:label "mementoDatetime";
+   rdfs:comment """mementoDatetime is the datetime of the prior state of the Original Resource that is encapsulated by a Memento; it is the datetime on which the snapshot of the Original Resource was taken 
+      that is reflected by the Memento. The value of mementoDatetime is provided in the Memento-Datetime HTTP header of the Memento. 
+      The presence of a Memento-Datetime header constitutes a promise that the resource state reflected in the Memento will no longer change.""";
+   rdfs:domain <http://mementoweb.org/ns#Memento>;
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:range xsd:dateTimeStamp .
+
+<http://mementoweb.org/ns#timegate> a rdf:Property;
+   rdfs:label "timegate relation type";
+   rdfs:comment "The timegate relation type is used to point from the Original Resource, as well as from a Memento associated with the Original Resource, to a TimeGate for the Original Resource.";
+   rdfs:domain <http://mementoweb.org/ns#OriginalResource>,
+     <http://mementoweb.org/ns#Memento>;
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:range <http://mementoweb.org/ns#TimeGate>;
+   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc7089.txt>,
+     <https://www.iana.org/assignments/link-relations/link-relations.xhtml> .
+
+<http://mementoweb.org/ns#timemap> a rdf:Property;
+   rdfs:label "timemap relation type";
+   rdfs:comment "The timemap relation type is used to point from a TimeGate or a Memento associated with an Original Resource, as well as from the Original Resource itself, to a TimeMap for the Original Resource.";
+   rdfs:domain <http://mementoweb.org/ns#TimeGate>,
+     <http://mementoweb.org/ns#OriginalResource>,
+     <http://mementoweb.org/ns#Memento>;
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:range <http://mementoweb.org/ns#TimeMap>;
+   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc7089.txt>,
+     <https://www.iana.org/assignments/link-relations/link-relations.xhtml> .
+
+<http://mementoweb.org/ns#original> a rdf:Property,
+     owl:FunctionalProperty;
+   rdfs:label "original relation type";
+   rdfs:comment "The original relation type is used to point from a TimeGate or a Memento to its associated Original Resource.";
+   rdfs:domain <http://mementoweb.org/ns#TimeGate>,
+     <http://mementoweb.org/ns#Memento>;
+   rdfs:isDefinedBy <http://mementoweb.org/ns>;
+   rdfs:range <http://mementoweb.org/ns#OriginalResource>;
+   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc7089.txt>,
+     <https://www.iana.org/assignments/link-relations/link-relations.xhtml> .
+
+<http://mementoweb.org/ns> rdfs:label "The Memento terms vocabulary";
+   dc:title "The Memento terms vocabulary";
+   dc:creator <https://hvdsomp.info/#i>, 
+              <https://csarven.ca/#i>;
+   dc:license <https://creativecommons.org/publicdomain/zero/1.0/>;
+   rdfs:comment "The set of terms for the Memento Framework, RFC7089";
+   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc7089.txt> .
