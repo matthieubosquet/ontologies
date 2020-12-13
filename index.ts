@@ -25,6 +25,7 @@ export const SHACL: NodeJS.ReadableStream = createReadStream(joinPath(__dirname,
 export const SHAPETREE: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `shapetree.ttl`));
 export const SKOS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `skos.ttl`));
 export const SKOSXL: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `skos-xl.ttl`));
+export const SOLIDACP: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `solid_acp.ttl`));
 export const SOLIDTERMS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `solid_terms.ttl`));
 export const SWAPDOC: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `swap_doc.ttl`));
 export const UI: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `ui.ttl`));
