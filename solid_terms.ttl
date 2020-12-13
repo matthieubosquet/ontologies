@@ -14,7 +14,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 ### Other ontologies
 prefix dcterms: <http://purl.org/dc/terms/>
-prefix ldp: <http://www.w3.org/ns/ldp#> .
+prefix ldp: <http://www.w3.org/ns/ldp#>
 prefix log: <http://www.w3.org/2000/10/swap/log#>
 prefix vann: <http://purl.org/vocab/vann/>
 
@@ -26,7 +26,7 @@ prefix vann: <http://purl.org/vocab/vann/>
     rdfs:comment "Solid, derived from social linked data, is a proposed set of conventions and tools for building decentralized social applications based on Linked Data principles."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
     rdfs:seeAlso
-        <https://solid.github.io/specification/>,
+        <https://solid.github.io/specification/> ;
     dcterms:issued "2015-11-16"^^xsd:date ;
     dcterms:modified "2018-01-24"^^xsd:date ;
     vann:preferredNamespacePrefix "solid" ;
@@ -98,7 +98,7 @@ solid:deletes
     rdfs:comment "The triple patterns this patch removes from the document."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "deletes"@en ;
-    rdfs:domain :Patch ;
+    rdfs:domain solid:Patch ;
     rdfs:range log:Formula .
 
 solid:forClass
@@ -121,7 +121,7 @@ solid:inserts
     rdfs:comment "The triple patterns this patch adds to the document."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "inserts"@en ;
-    rdfs:domain :Patch ;
+    rdfs:domain solid:Patch ;
     rdfs:range log:Formula .
 
 solid:instance
@@ -163,7 +163,7 @@ solid:privateTypeIndex
 
 solid:publicTypeIndex
     a rdf:Property ;
-    rdfs:subPropertyOf :typeIndex ;
+    rdfs:subPropertyOf solid:typeIndex ;
     rdfs:comment "Points to a listed type index resource."@en ;
     rdfs:range <#ListedDocument> ;
     rdfs:isDefinedBy <> ;
@@ -195,7 +195,7 @@ solid:patches
     rdfs:comment "The document to which this patch applies."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "patches"@en ;
-    rdfs:domain :Patch ;
+    rdfs:domain solid:Patch ;
     rdfs:range rdfs:Resource .
 
 solid:timeline
@@ -209,19 +209,19 @@ solid:where
     rdfs:comment "The conditions the document and the inserted and deleted triple patterns need to satisfy in order for the patch to be applied."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "where"@en ;
-    rdfs:domain :Patch ;
+    rdfs:domain solid:Patch ;
     rdfs:range log:Formula .
 
 solid:storageQuota
     a rdf:Property, owl:DatatypeProperty ;
     rdfs:comment "The quota of non-volatile memory that is available for the account (in bytes)"@en ;
     rdfs:isDefinedBy <> ;
-    rdfs:domain :Account ;
+    rdfs:domain solid:Account ;
     rdfs:label "Non-volatile memory quota"@en .
 
 solid:storageUsage
     a rdf:Property, owl:DatatypeProperty ;
     rdfs:comment "The amount of non-volatile memory that the account have used (in bytes)"@en ;
     rdfs:isDefinedBy <> ;
-    rdfs:domain :Account ;
+    rdfs:domain solid:Account ;
     rdfs:label "Non-volatile memory usage"@en .
