@@ -2,31 +2,38 @@
   "name": "ontl",
   "version": "0.1.10",
   "description": "A collection of ontologies serialised in turtle, readable as stream.",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc -p .tsconfig.json",
-    "prepublishOnly": "npm install && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matthieubosquet/ontologies.git"
-  },
+  "author": "Matthieu Bosquet",
+  "license": "MIT",
   "keywords": [
     "ontology",
     "turtle",
     "rdf",
     "stream"
   ],
-  "author": "Matthieu Bosquet",
-  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "resources"
+  ],
+  "scripts": {
+    "build": "tsc -p .tsconfig.json",
+    "preinstall": "rm -rf node_modules",
+    "prepublishOnly": "npm install && npm run build",
+    "postinstall": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthieubosquet/ontologies.git"
+  },
   "bugs": {
     "url": "https://github.com/matthieubosquet/ontologies/issues"
   },
   "homepage": "https://github.com/matthieubosquet/ontologies#readme",
   "devDependencies": {
-    "@tsconfig/node12": "^1.0.7",
-    "@types/node": "^14.11.8",
-    "typescript": "^4.0.3"
+    "@tsconfig/node14": "^1.0.0",
+    "@types/node": "^14.14.14",
+    "typescript": "^4.1.3"
   }
 }

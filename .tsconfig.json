@@ -1,13 +1,16 @@
 {
-    "extends": "@tsconfig/node12/tsconfig.json",
+    "extends": "@tsconfig/node14/tsconfig.json",
     "compilerOptions": {
-        "declaration": true
+        "declaration": true,
+        "outDir": "dist",
+        "sourceMap": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     },
     "include": [
-        "index.ts"
+        "src/index.ts"
     ],
     "exclude": [
-        "node_modules",
-        "**/*.test.ts"
+        "node_modules"
     ]
 }
