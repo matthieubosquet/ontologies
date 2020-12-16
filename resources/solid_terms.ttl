@@ -217,6 +217,14 @@ solid:oidcIssuer
     rdfs:label "oidc issuer"@en ;
     rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
 
+solid:oidcRegistration
+    a rdf:Property ;
+    dc:issued "2020-12-18"^^xsd:date ;
+    rdfs:comment "A JSON serialization of an OIDC client registration, per the definition of client registration metadata from [RFC7591] section 2."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
+    rdfs:label "oidc registration"@en ;
+    rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
+
 solid:patches
     a rdf:Property, owl:ObjectProperty ;
     dc:issued "2017-08-17"^^xsd:date ;
