@@ -20,6 +20,7 @@ prefix vann: <http://purl.org/vocab/vann/>
 
 ## Ontology
 <http://purl.org/dc/elements/1.1/>
+    owl:deprecated true ;
     a owl:Ontology ;
     rdfs:label "Dublin Core metadata element set ontology"@en ;
     rdfs:comment "This ontology has been superseded by DC Terms. Do not use it."
