@@ -18,9 +18,7 @@
   ],
   "scripts": {
     "build": "tsc -p .tsconfig.json",
-    "preinstall": "rm -rf node_modules",
     "prepublishOnly": "npm install && npm run build",
-    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
