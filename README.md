@@ -89,10 +89,9 @@ prefix acl: <http://www.w3.org/ns/auth/acl#>
 prefix cc: <http://creativecommons.org/ns#>
 prefix cert: <http://www.w3.org/ns/auth/cert#>
 prefix csvw: <http://www.w3.org/ns/csvw#>
-prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dc: <http://purl.org/dc/terms/>
 prefix dcam: <http://purl.org/dc/dcam/>
 prefix dcat: <http://www.w3.org/ns/dcat#>
-prefix dcterms: <http://purl.org/dc/terms/>
 prefix dctype: <http://purl.org/dc/dcmitype/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix ldp: <http://www.w3.org/ns/ldp#>
@@ -101,7 +100,7 @@ prefix schema: <https://schema.org/>
 prefix shacl: <http://www.w3.org/ns/shacl#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix skosxl: <http://www.w3.org/2008/05/skos-xl#>
-prefix solidterms: <http://www.w3.org/ns/solid/terms#>
+prefix solid: <http://www.w3.org/ns/solid/terms#>
 prefix swapdoc: <http://www.w3.org/2000/10/swap/pim/doc#>
 prefix ui: <http://www.w3.org/ns/ui#>
 prefix vann: <http://purl.org/vocab/vann/>
