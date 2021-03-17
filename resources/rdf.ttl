@@ -18,8 +18,6 @@ prefix vann: <http://purl.org/vocab/vann/>
 ## Ontology
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     a owl:Ontology ;
-    rdfs:label "W3C RDF ontology"@en ;
-    rdfs:comment "This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts."@en ;
     rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
     rdfs:seeAlso
         <https://www.w3.org/TR/rdf11-primer/>,
@@ -43,7 +41,9 @@ prefix vann: <http://purl.org/vocab/vann/>
             rdfs:seeAlso <https://web.archive.org/web/changes/http://www.w3.org/1999/02/22-rdf-syntax-ns> ;
         ] ;
     vann:preferredNamespacePrefix "rdf" ;
-    vann:preferredNamespaceUri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI .
+    vann:preferredNamespaceUri "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+    rdfs:label "W3C RDF ontology"@en ;
+    rdfs:comment "This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts."@en .
 
 ## Class
 rdf:Alt
