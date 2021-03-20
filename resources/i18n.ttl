@@ -1,0 +1,13 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://www.w3.org/ns/i18n#> a owl:Ontology ;
+    dc:title "The I18N Namespace" ;
+    dc:description """
+            The i18n namespace is used for describing combinations of language tag and base direction in RDF literals.
+            It is used as an alternative mechanism for describing the BCP47 language tag and base direction of RDF literals
+            that would otherwise use the xsd:string or rdf:langString datatypes.
+        """;
+    rdfs:seeAlso <https://www.w3.org/TR/json-ld11/#the-i18n-namespace> .
