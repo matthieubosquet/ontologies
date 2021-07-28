@@ -9,7 +9,7 @@ export const XSD: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `
 
 // Other ontologies
 export const ACL: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `../resources/acl.ttl`));
-export const ACTIVITYSTREAMS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `../resources/activitystreams.ttl`));
+export const ACTIVITY_STREAMS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `../resources/activity-streams.ttl`));
 export const CERT: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `../resources/cert.ttl`));
 export const CONTENT: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `../resources/content.ttl`));
 export const CREATIVE_COMMONS: NodeJS.ReadableStream = createReadStream(joinPath(__dirname, `../resources/creative-commons.ttl`));
