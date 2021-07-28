@@ -1,16 +1,17 @@
 {
-    "extends": "@tsconfig/node14/tsconfig.json",
+    "extends": "@tsconfig/node12/tsconfig.json",
     "compilerOptions": {
         "declaration": true,
-        "outDir": "dist",
-        "sourceMap": true,
+        "incremental": true,
+        "inlineSources": true,
+        "newLine": "lf",
         "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "outDir": "dist",
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "stripInternal": true
     },
     "include": [
         "src/index.ts"
-    ],
-    "exclude": [
-        "node_modules"
     ]
 }

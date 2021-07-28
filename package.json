@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/matthieubosquet/ontologies#readme",
   "devDependencies": {
-    "@tsconfig/node14": "^1.0.0",
-    "@types/node": "^14.14.14",
-    "typescript": "^4.1.3"
+    "@tsconfig/node12": "^1.0.9",
+    "@types/node": "^16.4.6",
+    "typescript": "^4.3.5"
   }
 }
