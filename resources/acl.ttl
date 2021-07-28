@@ -24,88 +24,78 @@ prefix vcard: <http://www.w3.org/2006/vcard/ns#>
 ## Ontology
 #### Definition
 <http://www.w3.org/ns/auth/acl#>
-    a owl:Ontology ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/auth/acl#> ;
-    rdfs:seeAlso
-        <https://www.w3.org/2001/04/20-ACLs>,
-        <https://www.w3.org/wiki/WebAccessControl>,
-        <https://github.com/solid/web-access-control-spec> ;
-    dc:issued "2001-04-20"^^xsd:date ;
-    vann:preferredNamespacePrefix "acl" ;
-    vann:preferredNamespaceUri "http://www.w3.org/ns/auth/acl#"^^xsd:anyURI ;
-    rdfs:label "W3C Basic Access Control ontology"@en ;
-    rdfs:comment """Defines the class Authorization and its essential properties,
-    and also some classes of access such as read and write.""" .
+  a owl:Ontology ;
+  rdfs:isDefinedBy <http://www.w3.org/ns/auth/acl#> ;
+  rdfs:seeAlso
+      <https://www.w3.org/2001/04/20-ACLs>,
+      <https://www.w3.org/wiki/WebAccessControl>,
+      <https://github.com/solid/web-access-control-spec> ;
+  dc:issued "2001-04-20"^^xsd:date ;
+  vann:preferredNamespacePrefix "acl" ;
+  vann:preferredNamespaceUri "http://www.w3.org/ns/auth/acl#"^^xsd:anyURI ;
+  rdfs:label "W3C Basic Access Control ontology"@en ;
+  rdfs:comment "Defines the class Authorization and its essential properties, and also some classes of access such as read and write."@en .
 
 
-#### Class
+## Class
+#### Access Modes
 acl:Access
-    a rdfs:Class ;
-    acl:label "Access"@en ;
-    rdfs:comment "Any kind of access to a resource. Don't use this, use R W and RW" .
+  a rdfs:Class ;
+  acl:label "Access"@en ;
+  rdfs:comment "Any kind of access to a resource. Don't use this, use R W and RW."@en .
 
 acl:Append
-    a rdfs:Class ;
-    rdfs:subClassOf acl:Access, acl:Write ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/auth/acl#> ;
-    rdfs:label "Append"@en ;
-    rdfs:comment """Append accesses are specific write access which only add information, and do not remove information. For text files, for example, append access allows bytes to be added onto the end of the file. For RDF graphs, Append access allows adds triples to the graph but does not remove any. Append access is useful for dropbox functionality. Dropbox can be used for link notification, which the information added is a notification that a some link has been made elsewhere relevant to the given resource.""" .
+  a rdfs:Class ;
+  rdfs:subClassOf acl:Access, acl:Write ;
+  rdfs:isDefinedBy <http://www.w3.org/ns/auth/acl#> ;
+  rdfs:label "Append"@en ;
+  rdfs:comment "Append accesses are specific write access which only add information, and do not remove information. For text files, for example, append access allows bytes to be added onto the end of the file. For RDF graphs, Append access allows adds triples to the graph but does not remove any. Append access is useful for dropbox functionality. Dropbox can be used for link notification, which the information added is a notification that a some link has been made elsewhere relevant to the given resource."@en .
 
 acl:Control
-    a rdfs:Class;
-    rdfs:comment "Allows read/write access to the ACL for the resource(s)";
-    rdfs:label "Control"@en;
-    rdfs:subClassOf acl:Access .
+  a rdfs:Class ;
+  rdfs:subClassOf acl:Access ;
+  rdfs:label "Control"@en ;
+  rdfs:comment "Allows read/write access to the ACL for the resource(s)."@en .
 
 acl:Read
-    a rdfs:Class;
-    rdfs:comment "The class of read operations";
-    rdfs:label "read"@en;
-    rdfs:subClassOf acl:Access .
+  a rdfs:Class ;
+  rdfs:subClassOf acl:Access ;
+  rdfs:label "Read"@en ;
+  rdfs:comment "The class of read operations." .
 
 acl:Write
-    a rdfs:Class;
-    rdfs:label "write"@en;
-    rdfs:comment "The class of read operations";
-    rdfs:subClassOf acl:Access .
+  a rdfs:Class ;
+  rdfs:subClassOf acl:Access ;
+  rdfs:label "Write"@en ;
+  rdfs:comment "The class of write operations." .
 
 
 acl:AuthenticatedAgent
-    a rdfs:Class;
-     rdfs:comment """A class of agents who have been authenticated.
-In other words, anyone can access this resource, but not anonymously.
-The social expectation is that the authentication process will provide an
-identify and a name, or pseudonym.
-(A new ID should not be minted for every access: the intent is that the user
-is able to continue to use the ID for continues interactions with peers,
-and for example to develop a reputation)
-""";
-     rdfs:label "Anyone authenticated";
-     rdfs:subClassOf foaf:Agent .
+  a rdfs:Class ;
+  rdfs:comment "A class of agents who have been authenticated. In other words, anyone can access this resource, but not anonymously. The social expectation is that the authentication process will provide an identify and a name, or pseudonym. (A new ID should not be minted for every access: the intent is that the user is able to continue to use the ID for continues interactions with peers, and for example to develop a reputation)." ;
+  rdfs:label "Anyone authenticated" ;
+  rdfs:subClassOf foaf:Agent .
 
-acl:Authorization     a rdfs:Class;
-     rdfs:comment """An element of access control,
-allowing agent to agents access of some kind to resources or classes of resources""";
-     rdfs:label "authorization" .
+acl:Authorization
+  a rdfs:Class ;
+  rdfs:comment "An element of access control, allowing agent to agents access of some kind to resources or classes of resources." ;
+  rdfs:label "authorization" .
 
-acl:Origin     a rdfs:Class;
-     rdfs:comment """An Origin is basically a web site
-     (Note WITHOUT the trailing slash after the domain name and port in its URI)
-     and is the basis for controlling access to data by web apps
-     in the Same Origin Model of web security.
-     All scripts from the same origin are given the same right.""";
-     rdfs:label "Origin";
-     rdfs:seeAlso Heade:Origin .
+acl:Origin
+  a rdfs:Class ;
+  rdfs:comment "An Origin is basically a web site (Note WITHOUT the trailing slash after the domain name and port in its URI) and is the basis for controlling access to data by web apps in the Same Origin Model of web security. All scripts from the same origin are given the same right." ;
+  rdfs:label "Origin" ;
+  rdfs:seeAlso Heade:Origin .
 
 
-acl:accessControl     a rdf:Property;
-     rdfs:comment """The Access Control file for this information resource.
-     This may of course be a virtual resource implemented by the access control system.
-     Note also HTTP's header  Link:  foo.meta ;rel=meta can be used for this.""";
-     rdfs:domain gen:InformationResource;
-     rdfs:label "access control";
-     rdfs:range gen:InformationResource;
-     rdfs:subPropertyOf rdfs:seeAlso .
+acl:accessControl
+    a rdf:Property ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+    rdfs:domain gen:InformationResource ;
+    rdfs:range gen:InformationResource ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/auth/acl#> ;
+    rdfs:label "access control"@en ;
+    rdfs:comment "The Access Control file for this information resource. This may of course be a virtual resource implemented by the access control system. Note also HTTP's header  Link:  foo.meta ;rel=meta can be used for this."@en .
 
 acl:accessTo     a rdf:Property;
      rdfs:comment "The information resource to which access is being granted.";
@@ -163,23 +153,25 @@ For example, Alice delegates Bob to act on behalf of Alice for ACL purposes.""";
      rdfs:label "delegates"@en;
      rdfs:range foaf:Agent .
 
-acl:mode     a rdf:Property;
-     rdfs:comment "A mode of access such as read or write.";
-     rdfs:domain acl:Authorization;
-     rdfs:label "access mode";
-     rdfs:range rdfs:Class .
+acl:mode
+  a rdf:Property;
+  rdfs:comment "A mode of access such as read or write.";
+  rdfs:domain acl:Authorization;
+  rdfs:label "access mode";
+  rdfs:range rdfs:Class .
 
-acl:origin     a rdf:Property;
-     rdfs:comment """A web application, identified by its Origin, such as
-     <https://scripts.example.com>, being given the right.
-     When a user of the web application at a certain origin accesses the server,
-     then the browser sets the Origin: header to warn that a possibly untrusted webapp
-     is being used.
-     Then, BOTH the user AND the origin must have the required access.""";
-     rdfs:domain acl:Authorization;
-     rdfs:label "origin";
-     rdfs:range acl:Origin;
-     rdfs:seeAlso Heade:Origin .
+acl:origin
+  a rdf:Property;
+  rdfs:comment """A web application, identified by its Origin, such as
+  <https://scripts.example.com>, being given the right.
+  When a user of the web application at a certain origin accesses the server,
+  then the browser sets the Origin: header to warn that a possibly untrusted webapp
+  is being used.
+  Then, BOTH the user AND the origin must have the required access.""";
+  rdfs:domain acl:Authorization;
+  rdfs:label "origin";
+  rdfs:range acl:Origin;
+  rdfs:seeAlso Heade:Origin .
 
 acl:owner     a rdf:Property;
      rdfs:comment """The person or other agent which owns this.
