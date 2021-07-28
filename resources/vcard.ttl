@@ -351,7 +351,7 @@ vcard:email a owl:ObjectProperty ;
     rdfs:label "email"@en ;
     rdfs:comment "This object property has been mapped"@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    owl:equivalentProperty :hasEmail .
+    owl:equivalentProperty vcard:hasEmail .
 
 vcard:extended-address a owl:DatatypeProperty ;
     rdfs:label "extended address"@en ;
@@ -643,23 +643,23 @@ vcard:Group a owl:Class ;
     rdfs:label "Group"@en ;
     rdfs:comment "Object representing a group of persons or entities.  A group object will usually contain hasMember properties to specify the members of the group."@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    rdfs:subClassOf :Kind ;
+    rdfs:subClassOf vcard:Kind ;
     owl:disjointWith :Individual,
         :Location,
         :Organization ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:onProperty :hasMember ;
-                        owl:someValuesFrom :Kind ] [ a owl:Restriction ;
+                        owl:onProperty vcard:hasMember ;
+                        owl:someValuesFrom vcard:Kind ] [ a owl:Restriction ;
                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :Kind ;
-                        owl:onProperty :hasMember ] ) ] .
+                        owl:onClass vcard:Kind ;
+                        owl:onProperty vcard:hasMember ] ) ] .
 
 vcard:Individual a owl:Class ;
     rdfs:label "Individual"@en ;
     rdfs:comment "An object representing a single person or entity"@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    rdfs:subClassOf :Kind ;
+    rdfs:subClassOf vcard:Kind ;
     owl:disjointWith :Location,
         :Organization .
 
@@ -699,7 +699,7 @@ vcard:VCard a owl:Class ;
     rdfs:label "VCard"@en ;
     rdfs:comment "The vCard class is  equivalent to the new Kind class, which is the parent for the four explicit types of vCards (Individual, Organization, Location, Group)"@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    owl:equivalentClass :Kind .
+    owl:equivalentClass vcard:Kind .
 
 vcard:fn a owl:DatatypeProperty ;
     rdfs:label "formatted name"@en ;
@@ -759,7 +759,7 @@ vcard:hasTelephone a owl:ObjectProperty ;
     rdfs:label "has telephone"@en ;
     rdfs:comment "To specify the telephone number for telephony communication with the object"@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    owl:equivalentProperty :tel .
+    owl:equivalentProperty vcard:tel .
 
 vcard:hasURL a owl:ObjectProperty ;
     rdfs:label "has url"@en ;
@@ -819,7 +819,7 @@ vcard:Location a owl:Class ;
     rdfs:label "Location"@en ;
     rdfs:comment "An object representing a named geographical place"@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    rdfs:subClassOf :Kind ;
+    rdfs:subClassOf vcard:Kind ;
     owl:disjointWith :Organization .
 
 vcard:additional-name a owl:DatatypeProperty ;
@@ -851,7 +851,7 @@ vcard:hasMember a owl:ObjectProperty ;
     rdfs:comment "To include a member in the group this object represents. (This property can only be used by Group individuals)"@en ;
     rdfs:domain :Group ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    rdfs:range :Kind .
+    rdfs:range vcard:Kind .
 
 vcard:honorific-prefix a owl:DatatypeProperty ;
     rdfs:label "honorific prefix"@en ;
@@ -900,7 +900,7 @@ vcard:Organization a owl:Class ;
     rdfs:comment """An object representing an organization.  An organization is a single entity, and might represent a business or government, a department or division within a business or government, a club, an association, or the like.
 """@en ;
     rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-    rdfs:subClassOf :Kind .
+    rdfs:subClassOf vcard:Kind .
 
 vcard:Gender a owl:Class ;
     rdfs:label "Gender"@en ;
@@ -915,7 +915,7 @@ vcard:Kind a owl:Class ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:string ;
             owl:onProperty :fn ],
-        :VCard .
+        vcard:VCard .
 
 vcard:Type a owl:Class ;
     rdfs:label "Type"@en ;
