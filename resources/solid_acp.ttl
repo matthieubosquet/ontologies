@@ -13,7 +13,8 @@ prefix lit_core: <https://w3id.org/lit/vocab/core#>
 prefix acp: <http://www.w3.org/ns/solid/acp#>
 
 
-acp: a owl:Ontology, lit_core:Ontology  ;
+acp:
+    a owl:Ontology, lit_core:Ontology  ;
     rdfs:label "Solid Access Control Policy Vocabulary"@en ;
     rdfs:comment "A vocabulary to structure policy-based access controls for the Solid ecosystem."@en ;
     owl:versionInfo "0.1" ;
@@ -29,19 +30,22 @@ acp: a owl:Ontology, lit_core:Ontology  ;
 #   Named Individuals
 ########################
 
-acp:AuthenticatedAgent a owl:NamedIndividual ;
+acp:AuthenticatedAgent
+    a owl:NamedIndividual ;
     rdfs:label "Authenticated Agent"@en ;
     rdfs:comment """An IRI representing an authenticated agent.
  Please note that in a decentralized authentication ecosystem, an authenticated agent may be ephemeral
  and, from a security standpoint, may not be significantly different than an anonymous agent."""@en ;
     rdfs:isDefinedBy acp: .
 
-acp:CreatorAgent a owl:NamedIndividual ;
+acp:CreatorAgent
+    a owl:NamedIndividual ;
     rdfs:label "Creator Agent"@en ;
     rdfs:comment "An IRI representing the creator of a resource."@en ;
     rdfs:isDefinedBy acp: .
 
-acp:PublicAgent a owl:NamedIndividual ;
+acp:PublicAgent
+    a owl:NamedIndividual ;
     rdfs:label "Public Agent"@en ;
     rdfs:comment "An IRI representing a public or anonymous agent."@en ;
     rdfs:isDefinedBy acp: .
