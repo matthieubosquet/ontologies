@@ -1,0 +1,34 @@
+@prefix : <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foa: <http://web.mit.edu/dsheets/www/foaf.rdf#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http#> .
+@prefix httph: <#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    
+<>      a owl:Ontology;
+         dc:creator foa:dsheets;
+         dc:date "2006-07-26";
+         dc:description "This is a vocabulary for describing HTTP headers.";
+         dc:title "HTTP Header Vocabulary";
+         :comment
+
+"""This vocabulary is a one deemed to contain all HTTP headers.
+The rdflib.js library uses it as for relationships between an HTTP response
+and the  content (value) of the HTTP header in that response.     The ontology
+is deemed to contain one property for every HTTP header, standard or not.
+The property in this ontology has a localname which is the header field converted
+to lower case.""" .
+    
+    httph:content-type     a rdf:Property;
+         :comment "See the HTTP specification";
+         :domain http:Message;
+         :isDefinedBy <>;
+         :label "content type";
+         :range :Literal .
+    
+    foa:dsheets     a foaf:Person;
+         foaf:mbox <mailto:dsheets@mit.edu>;
+         foaf:name "David Sheets" .
+    
