@@ -1,6 +1,6 @@
 {
   "name": "ontl",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A collection of ontologies serialised in turtle, readable as stream.",
   "author": "Matthieu Bosquet",
   "license": "MIT",
