@@ -86,6 +86,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 # Other ontologies
 prefix acl: <http://www.w3.org/ns/auth/acl#>
+prefix acp: <http://www.w3.org/ns/solid/acp#>
 prefix cc: <http://creativecommons.org/ns#>
 prefix cert: <http://www.w3.org/ns/auth/cert#>
 prefix csvw: <http://www.w3.org/ns/csvw#>
