@@ -1,0 +1,490 @@
+@prefix : <> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http://www.w3.org/2011/http#> .
+@prefix httph: <http://www.w3.org/2011/http-headers#> .
+@prefix httpm: <http://www.w3.org/2011/http-methods#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix test-description: <http://www.w3.org/2006/03/test-description#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#TODO: Specification Terms namespace. Possibly http://www.w3.org/ns/spec#
+
+#XXX: DO NOT USE besides experimenting.
+
+@prefix spec: <#> .
+
+spec:
+  a owl:Ontology ;
+  dcterms:issued "2021-06-04"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  owl:versionInfo [
+    dcterms:date "2021-08-17"^^xsd:date ;
+#    dcterms:replaces <> ;
+#    rdfs:seeAlso <> ;
+  ] ;
+  vann:preferredNamespacePrefix "spec"@en ;
+  vann:preferredNamespaceUri "http://www.w3.org/ns/spec#"^^xsd:anyURI ;
+  vann:usageNote "Work in Progress!"@en ;
+  vs:term_status "testing"@en ;
+  dcterms:creator <https://csarven.ca/#i> .
+
+spec:Specification
+  a rdfs:Class ;
+  rdfs:label "Specification"@en ;
+  rdfs:comment "Specification Terms"@en ;
+  rdfs:isDefinedBy spec: .
+
+spec:requirement
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirement"@en ;
+  rdfs:range spec:Requirement .
+
+spec:Requirement
+  a rdfs:Class ;
+  rdfs:label "Requirement"@en .
+
+spec:requirementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirment level"@en ;
+  rdfs:domain spec:Requirement .
+
+spec:requirementSubject
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirement subject"@en ;
+  rdfs:domain spec:Requirement .
+
+spec:testScript
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "test script"@en ;
+  rdfs:domain test-description:TestCase .
+
+### XXX: Experimental
+#spec:NormativeRequirement
+#  rdfs:subClassOf spec:Requirement ;
+#  rdfs:label "Normative Requirement"@en .
+
+#spec:InformativeRequirement
+#  rdfs:subClassOf spec:Requirement ;
+#  rdfs:label "Informative Requirement"@en .
+
+#spec:excerpt
+#  a rdf:Property, owl:DatatypeProperty ;
+#  rdfs:label "excerpt"@en ;
+#  rdfs:range rdfs:Literal ;
+
+spec:statement
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "statement"@en ;
+  rdfs:range rdfs:Literal .
+
+spec:violatesAdvice
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "violates advice"@en ;
+  rdfs:range rdfs:Literal .
+
+spec:basedOnConsensus
+  a rdf:Property ;
+  rdfs:label "based on consensus"@en .
+
+spec:intellectualPropertyRights
+  a rdf:Property ;
+  rdfs:label "intellectual property rights"@en .
+
+spec:acknowledgements
+  a rdf:Property ;
+  rdfs:label "acknowledgements"@en .
+
+spec:requirementReference
+  a rdf:Property ;
+  rdfs:label "requirement reference"@en ;
+  rdfs:domain test-description:SpecificationTestCase ;
+  rdfs:range spec:Requirement .
+
+
+#Conformance
+### XXX: Experimental
+spec:conformanceRole
+  a rdf:Property ;
+  rdfs:label "conformance role"@en ;
+  rdfs:range spec:ConformanceClass .
+
+spec:ConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Conformance Class"@en .
+
+spec:ServerConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Server Conformance"@en ;
+  rdfs:subClassOf spec:ConformanceClass .
+
+spec:ClientConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Client Conformance"@en ;
+  rdfs:subClassOf spec:ConformanceClass .
+
+spec:Server
+  a skos:Concept ;
+  skos:prefLabel "Server"@en .
+
+spec:Client
+  a skos:Concept ;
+  skos:prefLabel "Client"@en .
+
+### XXX: Experimental.
+### TODO: This needs to be higher level than Requirement
+#spec:conformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "conformance level"@en ;
+#  rdfs:domain spec:Requirement ;
+#  rdfs:range spec:ConformanceLevel .
+
+#spec:ConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Level"@en .
+
+### XXX: Experimental. May not be necessary.
+#spec:normativeConformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "normative conformance level"@en ;
+#  rdfs:subPropertyOf spec:conformanceLevel .
+#
+#spec:informativeConformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "informative conformance level"@en ;
+#  rdfs:subPropertyOf spec:conformanceLevel .
+#
+#spec:NormativeConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Level"@en .
+#
+#spec:InformativeConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Informative Conformance Level"@en .
+
+
+### Requirement Level
+spec:RequirementLevel
+  a skos:ConceptScheme ;
+  skos:prefLabel "Requirement Level"@en ;
+  skos:hasTopConcept spec:MUST, spec:MUST-NOT, spec:REQUIRED, spec:REQUIRED, spec:SHALL-NOT, spec:SHOULD, spec:SHOULD-NOT, spec:RECOMMENDED, spec:NOT-RECOMMENDED, spec:MAY, spec:OPTIONAL ;
+  rdfs:isDefinedBy
+    <https://www.rfc-editor.org/info/bcp14> ,
+    <https://datatracker.ietf.org/doc/html/rfc8174> ,
+    <https://datatracker.ietf.org/doc/html/rfc2119> .
+
+spec:MUST
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MUST"@en ;
+  skos:exactMatch spec:REQUIRED, spec:SHALL .
+
+spec:MUST-NOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MUST NOT"@en ;
+  skos:exactMatch spec:SHALL-NOT .
+#  rdfs:isDefinedBy
+
+spec:REQUIRED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "REQUIRED"@en ;
+  skos:exactMatch spec:MUST, spec:SHALL .
+
+spec:SHALL
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHALL"@en ;
+  skos:exactMatch spec:MUST, spec:REQUIRED .
+
+spec:SHALL-NOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHALL NOT"@en ;
+  skos:exactMatch spec:MUST-NOT .
+
+spec:SHOULD
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHOULD"@en ;
+  skos:exactMatch spec:RECOMMENDED .
+
+spec:SHOULD-NOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHOULD NOT"@en ;
+  skos:exactMatch spec:NOT-RECOMMENDED .
+
+spec:RECOMMENDED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "RECOMMENDED"@en ;
+  skos:exactMatch spec:SHOULD .
+
+spec:NOT-RECOMMENDED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "NOT RECOMMENDED"@en ;
+  skos:exactMatch spec:SHOULD-NOT .
+
+spec:MAY
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MAY"@en ;
+  skos:exactMatch spec:OPTIONAL .
+
+spec:OPTIONAL
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "OPTIONAL"@en ;
+  skos:exactMatch spec:MAY .
+
+### Advisement Level
+spec:AdvisementLevel
+  a skos:ConceptScheme ;
+  skos:prefLabel "Advisement Level"@en .
+
+spec:strongly-encouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "strongly encouraged"@en .
+
+spec:strongly-discouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "strongly discouraged"@en .
+
+spec:encouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "encouraged"@en .
+
+spec:discouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "discouraged"@en .
+
+spec:can
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "can"@en .
+
+spec:cannot
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "cannot"@en .
+
+spec:could
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "could"@en .
+
+spec:could-not
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "could not"@en .
+
+spec:might
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "might"@en .
+
+spec:might-not
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "might not"@en .
+
+### XXX: Experimental
+#spec:conformanceParameter
+#  a rdf:Property ;
+#  rdfs:label "conformance paramater"@en ;
+#  rdfs:range spec:ConformanceParameter .
+
+#spec:ConformanceParameter
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Paramater"@en .
+
+
+### Example spec:Requirement
+### TODO: Work out Request/Response eg, when not PUT+Content-Type, 400
+
+#<https://solidproject.org/TR/protocol#test-server-header-put-content-type>
+#  a spec:NormativeRequirement ;
+#  spec:conformanceRole spec:ServerConformanceClass ;
+#  spec:normativeConformanceLevel spec:ConformanceMust ;
+#  spec:httpRequest [
+#    http:mthd httpm:PUT .
+#  ]
+#  spec:httpRequestHeader [
+#    http:hdrName httph:content-type .
+#  ]
+#  spec:httpResponseHeader [
+#    http:hdrName httph:content-type .
+#  ]
+
+#TODO? Property-ize all classes in http://www.w3.org/2011/http eg:
+#spec:httpRequest
+#  a rdf:Property ;
+#  rdfs:subPropertyOf spec:conformanceParameter ;
+#  rdfs:range http:Request ;
+#  rdfs:label "HTTP request conformance paramater"@en .
+
+#spec:httpRequestHeader
+#  a rdf:Property ;
+#  rdfs:subPropertyOf spec:conformanceParameter ;
+#  rdfs:range http:RequestHeader ;
+#  rdfs:comment "HTTP request header conformance parameter"@en .
+
+
+
+spec:documentStatus
+  a rdf:Property ;
+  rdfs:label "document status"@en .
+
+spec:terminology
+  a rdf:Property ;
+  rdfs:label "terminology"@en ;
+  rdfs:range skos:ConceptScheme .
+
+spec:conventions
+  a rdf:Property ;
+  rdfs:label "conventions"@en .
+
+spec:complianceWithOtherSpecifications
+  a rdf:Property ;
+  rdfs:label "compliance with other specifications"@en .
+
+spec:example
+  a rdf:Property ;
+  rdfs:label "example"@en .
+
+spec:note
+  a rdf:Property ;
+  rdfs:label "note"@en .
+
+spec:issue
+  a rdf:Property ;
+  rdfs:label "issue"@en .
+
+spec:exitCriteria
+  a rdf:Property ;
+  rdfs:label "exit criteria"@en .
+
+spec:successCriteria
+  a rdf:Property ;
+  rdfs:label "success criteria"@en .
+
+### Considerations
+
+spec:consideration
+  a rdf:Property ;
+  rdfs:label "consideration"@en ;
+  rdfs:range spec:Consideration .
+
+spec:Consideration
+  a rdfs:Class ;
+  rdfs:label "Consideration"@en .
+
+spec:SecurityConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Security Consideration"@en .
+
+spec:PrivacyConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Privacy Consideration"@en .
+
+spec:AccessibilityConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Accessibility Consideration"@en .
+
+spec:InternationalizationConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Internationalization Consideration"@en .
+
+spec:RegistrationConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Registration Consideration"@en ;
+  rdfs:comment "Registration considerations at standards bodies eg. Registering HTTP Link Relations at IANA."@en .
+
+spec:SelfReviewQuestionnaire
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Self-Review Questionnaire"@en .
+
+spec:SelfReviewQuestionnaireSecurityPrivacy
+  a rdfs:Class ;
+  rdfs:subClassOf spec:SelfReviewQuestionnaire ;
+  rdfs:label "Self-Review Questionnaire: Security and Privacy"@en ;
+  rdfs:seeAlso <https://www.w3.org/TR/security-privacy-questionnaire/> .
+
+
+### Variability in Specifications
+
+spec:Variability
+  a rdfs:Class ;
+  rdfs:seeAlso <https://www.w3.org/TR/spec-variability/> .
+
+spec:productClass
+  a rdf:Property .
+spec:profile
+  a rdf:Property .
+spec:module
+  a rdf:Property .
+spec:level
+  a rdf:Property .
+spec:discretionaryItem
+  a rdf:Property .
+spec:deprecation
+  a rdf:Property .
+spec:extensibility
+  a rdf:Property ;
+  rdfs:label "extensibility"@en ;
+  rdfs:range spec:Extensibility .
+
+spec:Extensibility
+  a rdfs:Class ;
+  rdfs:label "Extensibility"@en .
+
+
+### Already covered by random vocabs. Just listing to keep track.
+### Consider reusing those or subProperty or equivalentProperty these..
+spec:thisVersion
+  a rdf:Property .
+spec:latestVersion
+  a rdf:Property .
+spec:previousVersion
+  a rdf:Property .
+### or editorList authorList contributorList
+spec:editor
+  a rdf:Property .
+spec:author
+  a rdf:Property .
+spec:contributor
+  a rdf:Property .
+### doap-ish.
+spec:repository
+  a rdf:Property .
+spec:issueTracker
+  a rdf:Property .
+spec:implementation
+  a rdf:Property .
+### Citations / References. Use CiTO
+spec:citation
+   a rdf:Property .
+
+## Reuse Social
+#as:inReplyTo
+#ldp:inbox
+#oa:annotationService
