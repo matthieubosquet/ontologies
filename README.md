@@ -4,7 +4,7 @@ A collection of standard and well known ontologies serialised to [Turtle](https:
 
 <blockquote cite="https://en.wikipedia.org/wiki/Ontology_(information_science)">
   <p>In computer science and information science, an ontology encompasses a representation, formal naming and definition of the categories, properties and relations between the concepts, data and entities that substantiate one, many or all domains of discourse.</p>
-    <p>—<a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">Wikipedia: Ontology (information science)</a></p>
+    <p>— <a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">Wikipedia: Ontology (information science)</a></p>
 </blockquote>
 
 ## Core W3C ontologies
