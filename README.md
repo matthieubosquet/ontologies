@@ -15,7 +15,7 @@ RDF, RDFS, OWL & XSD constitute the reserved vocabulary of the OWL 2 Web Ontolog
     <h3>Anyone Can Make Statements About Any Resource</h3>
     <p>To facilitate operation at Internet scale, RDF is an open-world framework that allows anyone to make statements about any resource.</p>
     <p>In general, it is not assumed that complete information about any resource is available. RDF does not prevent anyone from making assertions that are nonsensical or inconsistent with other statements, or the world as people see it. Designers of applications that use RDF should be aware of this and may design their applications to tolerate incomplete or inconsistent sources of information.</p>
-    <p>—<a href="https://www.w3.org/TR/rdf-concepts/#section-anyone">Resource Description Framework (RDF): Concepts and Abstract Syntax</a></p>
+    <p>— <a href="https://www.w3.org/TR/rdf-concepts/#section-anyone">Resource Description Framework (RDF): Concepts and Abstract Syntax</a></p>
 </blockquote>
 
 ### RDF technical recommendations (25 February 2014)
