@@ -186,7 +186,7 @@ rdf:object
 rdf:predicate
     a rdf:Property ;
     rdfs:domain rdf:Statement ;
-    rdfs:range rdf:Property ;
+    rdfs:range rdfs:Resource ;
     rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
     rdfs:label "predicate" ;
     rdfs:comment "The predicate of the subject RDF statement."@en .
