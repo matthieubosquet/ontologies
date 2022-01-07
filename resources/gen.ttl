@@ -1,143 +1,126 @@
-@prefix dc11: <http://purl.org/dc/elements/1.1/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ns0: <http://www.w3.org/2000/10/swap/pim/doc#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+# See details within this document for linkage to specification and purpose.
+# This ontology file is a non-normative supporting document.
 
-<https://www.w3.org/2006/gen/ont>
-  dc11:title "An Ontology for Relating Generic and Specific Information Resources" ;
-  rdfs:comment """
-    This ontology implements concepts discussed in the Generic URIs 'DesignIsues' note.
-    It is also the topic of the W3C TAG issue and a related TAG finding.
-    This ontology does not model the fact that representations of a resource can be
-    customised as a function of things like user agent, target media,
-    the geographical position of the user,
-    the preferences of the user, etc.  These could be and can be added.
-    The FixedResource class is defined to be specific to ANY variation,
-    as is the fixedResource property.
-    """ ;
+# Gen ontology
+
+## Ontology preferred namespace prefix and URI
+prefix gen: <https://www.w3.org/2006/gen/ont#>
+
+## Other namespaces used
+### Core W3C ontologies (OWL 2 reserved vocabulary)
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+### Other ontologies
+prefix dc: <http://purl.org/dc/terms/>
+prefix swapdoc: <http://www.w3.org/2000/10/swap/pim/doc#>
+
+<https://www.w3.org/2006/gen/ont#>
+  dc:title "An Ontology for Relating Generic and Specific Information Resources" ;
+  rdfs:comment "This ontology implements concepts discussed in the Generic URIs 'DesignIsues' note. It is also the topic of the W3C TAG issue and a related TAG finding. This ontology does not model the fact that representations of a resource can be customised as a function of things like user agent, target media, the geographical position of the user, the preferences of the user, etc.  These could be and can be added. The FixedResource class is defined to be specific to ANY variation, as is the fixedResource property." ;
   rdfs:seeAlso <http://www.w3.org/DesignIssues/Generic> ;
-  ns0:creator <http://www.w3.org/People/Berners-Lee/card#i> ;
-  ns0:ipr <http://www.w3.org/2000/10/swap/LICENSE.n3> ;
-  ns0:version "$Id: ont.rdf,v 1.7 2009/04/20 10:12:30 timbl Exp $" .
+  swapdoc:creator <http://www.w3.org/People/Berners-Lee/card#i> ;
+  swapdoc:ipr <http://www.w3.org/2000/10/swap/LICENSE.n3> ;
+  swapdoc:version "$Id: ont.rdf,v 1.7 2009/04/20 10:12:30 timbl Exp $" .
 
-<http://www.w3.org/2006/gen/ont#ContentTypeGenericResource>
-  rdfs:comment """A resource which may have representations in
-    many different Content-Types.""" ;
+gen:ContentTypeGenericResource
+  rdfs:comment "A resource which may have representations in many different Content-Types." ;
   rdfs:label "Content-Type-generic resource" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:subClassOf gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#ContentTypeSpecificResource>
-  rdfs:comment """A resource of which all representations are in the
-		same Internet media type, or 'Content-Type'.""" ;
+gen:ContentTypeSpecificResource
+  rdfs:comment "A resource of which all representations are in the same Internet media type, or 'Content-Type'." ;
   rdfs:label "Content-Type-specific resource" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:subClassOf gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#FixedResource>
+gen:FixedResource
   a rdfs:Class ;
-  rdfs:comment """A resource whose representation type and content will not
-	    change under any circumstances.""" ;
+  rdfs:comment "A resource whose representation type and content will not change under any circumstances." ;
   rdfs:label "fixed resource" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#LanguageSpecificResource>, <http://www.w3.org/2006/gen/ont#contentTypeSpecificResource>, <http://www.w3.org/2006/gen/ont#timeSpecificResource> .
+  rdfs:subClassOf gen:LanguageSpecificResource, gen:contentTypeSpecificResource, gen:timeSpecificResource .
 
-<http://www.w3.org/2006/gen/ont#InformationResource>
+gen:InformationResource
   a rdfs:Class ;
-  rdfs:comment """An Information Resource is defined by the Architecture of
-	    the WWW.""" ;
+  rdfs:comment "An Information Resource is defined by the Architecture of the WWW." ;
   rdfs:label "information resource" .
 
-<http://www.w3.org/2006/gen/ont#LanguageGenericResource>
-  rdfs:comment """A resource defiend without constraint as to
-	the particular natural language in which it
-        maight be expressed.""" ;
+gen:LanguageGenericResource
+  rdfs:comment "A resource defiend without constraint as to the particular natural language in which it might be expressed." ;
   rdfs:label "language-generic resource" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:subClassOf gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#LanguageSpecificResource>
-  rdfs:comment """A resource of which all representations are in the
-		same natural language.""" ;
+gen:LanguageSpecificResource
+  rdfs:comment "A resource of which all representations are in the same natural language." ;
   rdfs:label "language-specific resource" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:subClassOf gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#TimeGenericResource>
-  rdfs:comment """A Information Resource which may have many versions,
-    and therfore representations of the resource at different times may vary.""" ;
+gen:TimeGenericResource
+  rdfs:comment "A Information Resource which may have many versions, and therfore representations of the resource at different times may vary." ;
   rdfs:label "Time-generic resource" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:subClassOf gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#TimeSpecificResource>
-  rdfs:comment """A resource of which all representations are in the
-		same version.  Representations of the resource will
-                not change as a result of th resource neing updated to a
-                version with time.  The dates of creation and
-                of last modification of such a resource would be
-                expected to be the same.""" ;
+gen:TimeSpecificResource
+  rdfs:comment """A resource of which all representations are in the same version. Representations of the resource will not change as a result of th resource neing updated to a version with time.  The dates of creation and of last modification of such a resource would be expected to be the same." ;
   rdfs:label "version" ;
-  rdfs:subClassOf <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:subClassOf gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#contentTypeGeneric>
+gen:contentTypeGeneric
   a rdf:Property ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#ContentTypeSpecificResource> ;
+  rdfs:domain gen:ContentTypeSpecificResource ;
   rdfs:label "Content-Type generic" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#ContentTypeGenericResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#sameWorkAs> .
+  rdfs:range gen:ContentTypeGenericResource ;
+  rdfs:subPropertyOf gen:sameWorkAs .
 
-<http://www.w3.org/2006/gen/ont#contentTypeSpecific>
+gen:contentTypeSpecific
   a rdf:Property ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#ContentTypeGenericResource> ;
+  rdfs:domain gen:ContentTypeGenericResource ;
   rdfs:label "Content-Type specific" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#ContentTypeSpecificResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#sameWorkAs> ;
-  owl:inverseOf <http://www.w3.org/2006/gen/ont#ContentTypeGeneric> .
+  rdfs:range gen:ContentTypeSpecificResource ;
+  rdfs:subPropertyOf gen:sameWorkAs ;
+  owl:inverseOf gen:ContentTypeGeneric .
 
-<http://www.w3.org/2006/gen/ont#fixedResource>
+gen:fixedResource
   a rdf:Property ;
-  rdfs:comment """A relation between a generic resource and a fixedResource
-    which is an everything-specific version of it.""" ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#InformationResource> ;
+  rdfs:comment "A relation between a generic resource and a fixedResource which is an everything-specific version of it." ;
+  rdfs:domain gen:InformationResource ;
   rdfs:label "Content-Type specific" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#FixedResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#contentTypeSpecific>, <http://www.w3.org/2006/gen/ont#languageSpecific>, <http://www.w3.org/2006/gen/ont#timeSpecific> .
+  rdfs:range gen:FixedResource ;
+  rdfs:subPropertyOf gen:contentTypeSpecific, gen:languageSpecific, gen:timeSpecific .
 
-<http://www.w3.org/2006/gen/ont#languageGeneric>
+gen:languageGeneric
   a rdf:Property ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#LanguageSpecificResource> ;
+  rdfs:domain gen:anguageSpecificResource ;
   rdfs:label "language generic" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#LanguageGenericResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#sameWorkAs> .
+  rdfs:range gen:LanguageGenericResource ;
+  rdfs:subPropertyOf gen:sameWorkAs .
 
-<http://www.w3.org/2006/gen/ont#languageSpecific>
+gen:languageSpecific
   a rdf:Property ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#LanguageGenericResource> ;
+  rdfs:domain gen:LanguageGenericResource ;
   rdfs:label "language specific" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#LanguageSpecificResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#sameWorkAs> ;
-  owl:inverseOf <http://www.w3.org/2006/gen/ont#languageGeneric> .
+  rdfs:range gen:LanguageSpecificResource ;
+  rdfs:subPropertyOf gen:sameWorkAs ;
+  owl:inverseOf gen:languageGeneric .
 
-<http://www.w3.org/2006/gen/ont#sameWorkAs>
+gen:sameWorkAs
   a rdf:Property, owl:SymmetricProperty ;
-  rdfs:comment """The equivalence relation linking all versions of a work,
-            specific or generic along various axes.""" ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#InformationResource> ;
+  rdfs:comment "The equivalence relation linking all versions of a work, specific or generic along various axes." ;
+  rdfs:domain gen:InformationResource ;
   rdfs:label "same work as" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#InformationResource> .
+  rdfs:range gen:InformationResource .
 
-<http://www.w3.org/2006/gen/ont#timeGeneric>
+gen:timeGeneric
   a rdf:Property ;
-  rdfs:comment """The related resource which for this time-sepcific resource
-            is the related time-generic resource.
-            A representation of the time-generic resource may be expected to be
-            the most recent time-specific resource at the time of
-            the representation.""" ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#TimeSpecificResource> ;
+  rdfs:comment "The related resource which for this time-sepcific resource is the related time-generic resource. A representation of the time-generic resource may be expected to be the most recent time-specific resource at the time of the representation." ;
+  rdfs:domain gen:TimeSpecificResource ;
   rdfs:label "time generic" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#TimeGenericResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#sameWorkAs> .
+  rdfs:range gen:TimeGenericResource ;
+  rdfs:subPropertyOf gen:sameWorkAs .
 
-<http://www.w3.org/2006/gen/ont#timeSpecific>
+gen:timeSpecific
   a rdf:Property ;
-  rdfs:domain <http://www.w3.org/2006/gen/ont#TimeGenericResource> ;
+  rdfs:domain gen:TimeGenericResource ;
   rdfs:label "version" ;
-  rdfs:range <http://www.w3.org/2006/gen/ont#TimeSpecificResource> ;
-  rdfs:subPropertyOf <http://www.w3.org/2006/gen/ont#sameWorkAs> ;
-  owl:inverseOf <http://www.w3.org/2006/gen/ont#timeGeneric> .
+  rdfs:range gen:TimeSpecificResource ;
+  rdfs:subPropertyOf gen:sameWorkAs ;
+  owl:inverseOf gen:timeGeneric .
