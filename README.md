@@ -59,6 +59,10 @@ RDF, RDFS, OWL & XSD constitute the reserved vocabulary of the OWL 2 Web Ontolog
 - Extension
   - [Data Range Extension: Linear Equations](https://www.w3.org/TR/owl2-dr-linear/) (Working Group Note)
 
+### Notation3 (Draft -  09 October 2022)
+
+- [Notation3](https://w3c.github.io/N3/spec/)
+
 ### XSD Datatypes
 
 - [XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](https://www.w3.org/TR/xmlschema11-2/)
