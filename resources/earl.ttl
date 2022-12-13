@@ -1,211 +1,212 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ns0: <http://www.w3.org/2002/07/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix doap: <http://usefulinc.com/ns/doap#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dc: <http://purl.org/dc/terms/> .
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix ns0: <http://www.w3.org/2002/07/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix doap: <http://usefulinc.com/ns/doap#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix dc: <http://purl.org/dc/terms/>
+prefix earl: <http://www.w3.org/ns/earl#>
 
-<https://www.w3.org/ns/earl>
-  a <http://www.w3.org/2002/07/owlOntology> ;
+<http://www.w3.org/ns/earl#>
+  a <http://www.w3.org/2002/07/owlOntology ;
   rdfs:label "Evaluation and Report Language (EARL) 1.0 Schema"@en ;
   rdfs:comment "Formal schema of the Evaluation and Report Language (EARL) 1.0"@en ;
   ns0:owlversionInfo "Editor's Working Draft 10 June 2009"@en ;
   rdfs:isDefinedBy <http://www.w3.org/TR/EARL10/> ;
   rdfs:seeAlso <http://www.w3.org/WAI/intro/earl>, <http://www.w3.org/TR/HTTP-in-RDF/>, <http://www.w3.org/TR/Content-in-RDF/>, <http://www.w3.org/TR/Pointers-in-RDF/> .
 
-<https://www.w3.org/ns/earl#Assertion>
+earl:Assertion
   rdfs:label "Assertion"@en ;
   rdfs:comment "a statement that embodies the results of a test"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#Assertor>
+earl:Assertor
   rdfs:label "Assertor"@en ;
   rdfs:comment "an entity such as a person, a software tool, an organization, or any other grouping that carries out a test collectively"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#TestSubject>
+earl:TestSubject
   rdfs:label "Test Subject"@en ;
   rdfs:comment "the class of things that have been tested against some test criterion"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#TestCriterion>
+earl:TestCriterion
   rdfs:label "Test Criterion"@en ;
   rdfs:comment "a testable statement, usually one that can be passed or failed"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#TestRequirement>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#TestCriterion> ;
+earl:TestRequirement
+  rdfs:subClassOf earl:TestCriterion ;
   rdfs:label "Test Requirement"@en ;
   rdfs:comment "a higher-level requirement that is tested by executing one or more sub-tests"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#TestCase>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#TestCriterion> ;
+earl:TestCase
+  rdfs:subClassOf earl:TestCriterion ;
   rdfs:label "Test Case"@en ;
   rdfs:comment "an atomic test, usually one that is a partial test for a requirement"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#TestResult>
+earl:TestResult
   rdfs:label "Test Result"@en ;
   rdfs:comment "the actual result of performing the test"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#TestMode>
+earl:TestMode
   rdfs:label "Test Mode"@en ;
   rdfs:comment "describes how a test was carried out"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#OutcomeValue>
+earl:OutcomeValue
   rdfs:label "Outcome Value"@en ;
   rdfs:comment "a discrete value that describes a resulting condition from carrying out the test"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#Pass>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#OutcomeValue> ;
+earl:Pass
+  rdfs:subClassOf earl:OutcomeValue ;
   rdfs:label "Pass"@en ;
   rdfs:comment "the class of outcomes to denote passing a test"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#Fail>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#OutcomeValue> ;
+earl:Fail
+  rdfs:subClassOf earl:OutcomeValue ;
   rdfs:label "Fail"@en ;
   rdfs:comment "the class of outcomes to denote failing a test"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#CannotTell>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#OutcomeValue> ;
+earl:CannotTell
+  rdfs:subClassOf earl:OutcomeValue ;
   rdfs:label "Undetermined"@en ;
   rdfs:comment "the class of outcomes to denote an undetermined outcome"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#NotApplicable>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#OutcomeValue> ;
+earl:NotApplicable
+  rdfs:subClassOf earl:OutcomeValue ;
   rdfs:label "Not applicable"@en ;
   rdfs:comment "the class of outcomes to denote the test is not applicable"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#NotTested>
-  rdfs:subClassOf <https://www.w3.org/ns/earl#OutcomeValue> ;
+earl:NotTested
+  rdfs:subClassOf earl:OutcomeValue ;
   rdfs:label "Not tested"@en ;
   rdfs:comment "the class of outcomes to denote the test has not been carried out"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#Software>
+earl:Software
   rdfs:subClassOf doap:Project ;
   rdfs:label "Software"@en ;
   rdfs:comment "any piece of software such as an authoring tool, browser, or evaluation tool"@en ;
   a owl:Class, rdfs:Class .
 
-<https://www.w3.org/ns/earl#assertedBy>
+earl:assertedBy
   rdfs:label "Asserted By"@en ;
   rdfs:comment "assertor of an assertion"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#Assertion> ;
-  rdfs:range <https://www.w3.org/ns/earl#Assertor> ;
+  rdfs:domain earl:Assertion ;
+  rdfs:range earl:Assertor ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#subject>
+earl:subject
   rdfs:label "Subject"@en ;
   rdfs:comment "test subject of an assertion"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#Assertion> ;
-  rdfs:range <https://www.w3.org/ns/earl#TestSubject> ;
+  rdfs:domain earl:Assertion ;
+  rdfs:range earl:TestSubject ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#test>
+earl:test
   rdfs:label "Test"@en ;
   rdfs:comment "test criterion of an assertion"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#Assertion> ;
-  rdfs:range <https://www.w3.org/ns/earl#TestCriterion> ;
+  rdfs:domain earl:Assertion ;
+  rdfs:range earl:TestCriterion ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#result>
+earl:result
   rdfs:label "Result"@en ;
   rdfs:comment "result of an assertion"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#Assertion> ;
-  rdfs:range <https://www.w3.org/ns/earl#TestResult> ;
+  rdfs:domain earl:Assertion ;
+  rdfs:range earl:TestResult ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#mode>
+earl:mode
   rdfs:label "Mode"@en ;
   rdfs:comment "mode in which the test was performed"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#Assertion> ;
-  rdfs:range <https://www.w3.org/ns/earl#TestMode> ;
+  rdfs:domain earl:Assertion ;
+  rdfs:range earl:TestMode ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#mainAssertor>
+earl:mainAssertor
   rdfs:label "Main Assertor"@en ;
   rdfs:comment "assertor that is primarily responsible for performing the test"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#Assertor> ;
-  rdfs:range <https://www.w3.org/ns/earl#Assertor> ;
+  rdfs:domain earl:Assertor ;
+  rdfs:range earl:Assertor ;
   rdfs:subPropertyOf <http://xmlns.com/foaf/spec/#term_member> ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#outcome>
+earl:outcome 
   rdfs:label "Outcome"@en ;
   rdfs:comment "outcome of performing the test"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#TestResult> ;
-  rdfs:range <https://www.w3.org/ns/earl#OutcomeValue> ;
+  rdfs:domain earl:TestResult ;
+  rdfs:range earl:OutcomeValue ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#pointer>
+earl:pointer 
   rdfs:label "Pointer"@en ;
   rdfs:comment "location within a test subject that are most relevant to a test result"@en ;
-  rdfs:domain <https://www.w3.org/ns/TestResult> ;
+  rdfs:domain earl:TestResult ;
   rdfs:range <http://www.w3.org/2009/pointers#Pointer> ;
   a owl:ObjectProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#info>
+earl:info 
   rdfs:label "Info"@en ;
   rdfs:comment "additional warnings or error messages in a human-readable form"@en ;
-  rdfs:domain <https://www.w3.org/ns/earl#TestResult> ;
+  rdfs:domain earl:TestResult ;
   rdfs:range rdfs:Literal ;
   a owl:DatatypeProperty, rdf:Property .
 
-<https://www.w3.org/ns/earl#automatic>
-  a <https://www.w3.org/ns/earl#TestMode> ;
+earl:automatic 
+  a earl:TestMode ;
   dc:title "Automatic"@en ;
   dc:description "where the test was carried out automatically by the software tool and without any human intervention"@en .
 
-<https://www.w3.org/ns/earl#manual>
-  a <https://www.w3.org/ns/earl#TestMode> ;
+earl:manual 
+  a earl:TestMode ;
   dc:title "Manual"@en ;
   dc:description "where the test was carried out by human evaluators"@en .
 
-<https://www.w3.org/ns/earl#semiAuto>
-  a <https://www.w3.org/ns/earl#TestMode> ;
+earl:semiAuto 
+  a earl:TestMode ;
   dc:title "Semi-Automatic"@en ;
   dc:description "where the test was partially carried out by software tools, but where human input or judgment was still required to decide or help decide the outcome of the test"@en .
 
-<https://www.w3.org/ns/earl#undisclosed>
-  a <https://www.w3.org/ns/earl#TestMode> ;
+earl:undisclosed 
+  a earl:TestMode ;
   dc:title "Undisclosed"@en ;
   dc:description "where the exact testing process is undisclosed"@en .
 
-<https://www.w3.org/ns/earl#unknownMode>
-  a <https://www.w3.org/ns/earl#TestMode> ;
+earl:unknownMode 
+  a earl:TestMode ;
   dc:title "Unknown"@en ;
   dc:description "where the testing process is unknown or undetermined"@en .
 
-<https://www.w3.org/ns/earl#passed>
-  a <https://www.w3.org/ns/earl#Pass> ;
+earl:passed 
+  a earl:Pass ;
   dc:title "Passed"@en ;
   dc:description "the subject passed the test"@en .
 
-<https://www.w3.org/ns/earl#failed>
-  a <https://www.w3.org/ns/earl#Fail> ;
+earl:failed 
+  a earl:Fail ;
   dc:title "Failed"@en ;
   dc:description "the subject failed the test"@en .
 
-<https://www.w3.org/ns/earl#cantTell>
-  a <https://www.w3.org/ns/earl#CannotTell> ;
+earl:cantTell 
+  a earl:CannotTell ;
   dc:title "Cannot tell"@en ;
   dc:description "it is unclear if the subject passed or failed the test"@en .
 
-<https://www.w3.org/ns/earl#inapplicable>
-  a <https://www.w3.org/ns/earl#NotApplicable> ;
+earl:inapplicable 
+  a earl:NotApplicable ;
   dc:title "Inapplicable"@en ;
   dc:description "the test is not applicable to the subject"@en .
 
-<https://www.w3.org/ns/earl#untested>
-  a <https://www.w3.org/ns/earl#NotTested> ;
+earl:untested 
+  a earl:NotTested ;
   dc:title "Untested"@en ;
   dc:description "the test has not been carried out"@en .
