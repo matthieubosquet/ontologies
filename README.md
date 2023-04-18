@@ -68,13 +68,20 @@ RDF, RDFS, OWL & XSD constitute the reserved vocabulary of the OWL 2 Web Ontolog
 - [XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](https://www.w3.org/TR/xmlschema11-2/)
 - [OWL Quick Reference: Built-in Datatypes and Facets](https://www.w3.org/TR/owl-quick-reference/#Built-in_Datatypes_and_Facets)
 
-## Other W3C ontologies
-
-SHACL, SKOS, DCAT, CSVW, VCARD.
-
 ## Other ontologies
 
-Dublin Core, FOAF, Schema.
+### W3C
+
+[SHACL](https://www.w3.org/TR/shacl/), [SKOS](https://www.w3.org/TR/skos-reference/), [DCAT](https://www.w3.org/TR/vocab-dcat-2/), [CSVW](https://w3c.github.io/csvw/syntax/), [VCARD](https://www.w3.org/TR/vcard-rdf/).
+
+### Other
+
+[Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), [FOAF](http://xmlns.com/foaf/0.1/), [Schema](https://schema.org/).
+
+## Other specifications
+
+- [Notation3](https://w3c.github.io/N3/spec/) (Draft Community Group Report 03 April 2023)
+- [RDF Thrift](https://afs.github.io/rdf-thrift/rdf-binary-thrift.html) (see also "[RDF Binary using Apache Thrift](https://jena.apache.org/documentation/io/rdf-binary.html)")
 
 ## Standard prefixes
 
