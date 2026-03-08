@@ -1,5 +1,7 @@
 # Ontologies
 
+[![npm](https://img.shields.io/npm/v/ontl)](https://www.npmjs.com/package/ontl)
+
 A collection of standard and well known ontologies serialised to [Turtle](https://en.wikipedia.org/wiki/Turtle_(syntax)).
 
 <blockquote cite="https://en.wikipedia.org/wiki/Ontology_(information_science)">
