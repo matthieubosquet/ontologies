@@ -1,3 +1,19 @@
-.DS_STORE
-dist
+# Dependencies
 node_modules
+package-lock.json
+
+# Build output
+dist
+
+# Generic ignore
+.local
+
+# IDE
+.vs
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
