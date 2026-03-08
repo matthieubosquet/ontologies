@@ -2,13 +2,16 @@
   "name": "ontl",
   "version": "0.2.0",
   "description": "A collection of ontologies serialised in turtle, readable as stream.",
-  "author": "Matthieu Bosquet",
   "license": "MIT",
   "keywords": [
     "ontology",
     "turtle",
     "rdf",
     "stream"
+  ],
+  "author": "Matthieu Bosquet",
+  "contributors": [
+    "Matthieu Bosquet (https://github.com/matthieubosquet)"
   ],
   "main": "dist/mod.js",
   "type": "module",
